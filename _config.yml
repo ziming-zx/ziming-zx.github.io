@@ -20,9 +20,9 @@ author: Ziming Xu
 ###############################################
 
 navbar-links:
-  Publications: "publications.md"
+  Publications: "publications"
   About Me:
-    - Contact: "https://beautifuljekyll.com"
+    - Contact: "contact"
     - CV: "https://ziming-zx.github.io/zx-resume/"
   Explore More: "https://sites.ualberta.ca/~juliana2/"
 
