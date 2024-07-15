@@ -5,5 +5,5 @@ subtitle: Get in Touch: Let's Collaborate and Connect
 ---
 
 ## Contact information
-Email: ziming4@ualberta.ca
+Email$:$ ziming4@ualberta.ca
 
