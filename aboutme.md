@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Publications
-subtitle: What did I publish before?
+subtitle: Explore My Previous Publications and Research Contributions
 ---
 
 ## Journal Publications
