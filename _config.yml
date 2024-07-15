@@ -20,11 +20,11 @@ author: Ziming Xu
 ###############################################
 
 navbar-links:
-  Publications: "aboutme"
+  Publications: "publications.md"
   About Me:
     - Contact: "https://beautifuljekyll.com"
     - CV: "https://ziming-zx.github.io/zx-resume/"
-  Author's home: "https://deanattali.com"
+  Explore More: "https://sites.ualberta.ca/~juliana2/"
 
 ################
 # --- Logo --- #
