@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Contact
-subtitle: Let's Collaborate and Connect
+subtitle: "Get in Touch: Let's Collaborate and Connect"
 ---
 
 ## Contact information
