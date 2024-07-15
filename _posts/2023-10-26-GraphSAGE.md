@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ST-GraphSAGE: Production Forecasting with Well Interference
+title: "ST-GraphSAGE: Production Forecasting with Well Interference"
 subtitle: Advanced prediction framework using GCN
 # cover-img: /assets/img/path.jpg
 # thumbnail-img: /assets/img/thumb.png
