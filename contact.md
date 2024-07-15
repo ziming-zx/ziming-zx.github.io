@@ -5,5 +5,6 @@ subtitle: Get in Touch: Let's Collaborate and Connect
 ---
 
 ## Contact information
-Email$:$ ziming4@ualberta.ca
+ziming4@ualberta.ca
+6-361 DICE, 9211 116th St, Edmonton, Alberta, Canada
 
