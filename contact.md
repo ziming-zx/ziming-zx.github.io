@@ -6,5 +6,5 @@ subtitle: Let's Collaborate and Connect
 
 ## Contact information
 Email: ziming4
-6-361 DICE, 9211 116th St, Edmonton, Alberta, Canada
+Address: 6-361 DICE, 9211 116th St, Edmonton, Alberta, Canada
 
