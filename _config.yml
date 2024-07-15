@@ -10,7 +10,7 @@
 ############################
 
 # Name of website
-title: Ziming's Research Blog
+title: Home
 
 # Your name to show in the footer
 author: Ziming Xu
@@ -23,7 +23,7 @@ navbar-links:
   Publications: "aboutme"
   About Me:
     - Contact: "https://beautifuljekyll.com"
-    - CV: "https://www.markdowntutorial.com/"
+    - CV: "https://ziming-zx.github.io/zx-resume/"
   Author's home: "https://deanattali.com"
 
 ################
