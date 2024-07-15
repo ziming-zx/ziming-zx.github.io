@@ -53,14 +53,14 @@ social-network-links:
   email: "someone@example.com"
 # rss: true  # remove this line if you don't want to show an RSS link at the bottom
 # facebook: deanattali
-  github: https://github.com/ziming-zx/
+  github: ziming-zx/
 #  twitter: daattali
 #  patreon: DeanAttali
 #  youtube: "@daattali"
 #  whatsapp: 15551212
 #  medium: yourname
 #  reddit: yourname
-  linkedin: www.linkedin.com/in/ziming-xu-kimi
+  linkedin: ziming-xu-kimi
 #  xing: yourname
 #  stackoverflow: "3943160/daattali"
 #  snapchat: deanat78
@@ -74,7 +74,7 @@ social-network-links:
 #  calendly: yourname
 #  mastodon: instance.url/@username
 #  bluesky: yourname
-  ORCID: https://orcid.org/0000-0002-6937-1307
+  ORCID: 0000-0002-6937-1307
   google-scholar: https://scholar.google.ca/citations?user=AakA-w0AAAAJ&hl=en
 #  discord: "invite_code" or "users/userid" or "invite/invite_code" 
 #  kaggle: yourname
