@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Shale Gas Production Forecasting with Well Interference Based on Spatial-Temporal Graph Convolution Network
-subtitle: Advanced prediction framwork using GCN
-cover-img: /assets/img/path.jpg
+title: ST-GraphSAGE: Production Forecasting with Well Interference
+subtitle: Advanced prediction framework using GCN
+# cover-img: /assets/img/path.jpg
 # thumbnail-img: /assets/img/thumb.png
 # share-img: /assets/img/path.jpg
 tags: [deep-learning, well-interference, multi-horizon, graph]
