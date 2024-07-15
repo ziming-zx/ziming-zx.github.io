@@ -3,7 +3,7 @@ layout: post
 title: "ST-GraphSAGE: Production Forecasting with Well Interference"
 subtitle: Advanced prediction framework using GCN
 # cover-img: /assets/img/path.jpg
-# thumbnail-img: /assets/img/thumb.png
+thumbnail-img: /assets/img/atce.jpg
 # share-img: /assets/img/path.jpg
 tags: [deep-learning, well-interference, multi-horizon, graph]
 author: Ziming Xu
