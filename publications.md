@@ -5,9 +5,9 @@ subtitle: Explore My Previous Publications and Research Contributions
 ---
 
 ## Journal Publications
-1. Xu, Z., & Leung, J. Y. (2024). Dynamic Real-Time Production Forecasting Model for Complex Subsurface Flow Systems with Variable-Length Input Sequences. SPE Journal. 2024;. [doi.org/10.2118/221482-PA](https://doi.org/10.2118/221482-PA)
+1. Xu, Z., & Leung, J. Y. (2024). Dynamic Real-Time Production Forecasting Model for Complex Subsurface Flow Systems with Variable-Length Input Sequences. SPE Journal. 1-17. [doi.org/10.2118/221482-PA](https://doi.org/10.2118/221482-PA)
 
-2. Xu, Z., & Leung, J. Y. (2024). Shale Gas Production Forecasting with Well Interference Based on Spatial-Temporal Graph Convolutional Network. SPE Journal. 2024;.
+2. Xu, Z., & Leung, J. Y. (2024). Shale Gas Production Forecasting with Well Interference Based on Spatial-Temporal Graph Convolutional Network. SPE Journal. 1-12.[doi.org/10.2118/215056-PA](https://doi.org/10.2118/215056-PA).
 
 3. Xu, Z., & Leung, J. Y. (2024). A novel formulation of RNN-based neural network with real-time updating–An application for dynamic hydraulic fractured shale gas production forecasting. Geoenergy Science and Engineering, 233, 212491. [doi.org/10.1016/j.geoen.2023.212491](https://doi.org/10.1016/j.geoen.2023.212491)
   
