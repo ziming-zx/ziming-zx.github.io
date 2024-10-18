@@ -5,7 +5,7 @@ subtitle: Explore My Previous Publications and Research Contributions
 ---
 
 ## Journal Publications
-1. Ma, Z., Yuan, Q., Xu, Z., & Leung, J. Y. (2024). A Dynamic Solvent Chamber Propagation Estimation Framework using RNN for Warm Solvent Injection in Heterogeneous Reservoirs. Geoenergy Science and Engineering}, 213405.[doi.org/10.1016/j.geoen.2024.213405](https://doi.org/10.1016/j.geoen.2024.213405)
+1. Ma, Z., Yuan, Q., Xu, Z., & Leung, J. Y. (2024). A Dynamic Solvent Chamber Propagation Estimation Framework using RNN for Warm Solvent Injection in Heterogeneous Reservoirs. Geoenergy Science and Engineering}, 213405. [doi.org/10.1016/j.geoen.2024.213405](https://doi.org/10.1016/j.geoen.2024.213405)
 
 2. Xu, Z., & Leung, J. Y. (2024). Dynamic Real-Time Production Forecasting Model for Complex Subsurface Flow Systems with Variable-Length Input Sequences. SPE Journal. 1-17. [doi.org/10.2118/221482-PA](https://doi.org/10.2118/221482-PA)
 
