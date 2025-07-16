@@ -5,7 +5,7 @@ subtitle: Explore My Previous Publications and Research Contributions
 ---
 
 ## Journal Publications
-1. Ma, Z., Yuan, Q., Xu, Z., & Leung, J. Y. (2024). A Dynamic Solvent Chamber Propagation Estimation Framework using RNN for Warm Solvent Injection in Heterogeneous Reservoirs. Geoenergy Science and Engineering}, 213405. [doi.org/10.1016/j.geoen.2024.213405](https://doi.org/10.1016/j.geoen.2024.213405)
+1. Ma, Z., Yuan, Q., Xu, Z., & Leung, J. Y. (2024). A Dynamic Solvent Chamber Propagation Estimation Framework using RNN for Warm Solvent Injection in Heterogeneous Reservoirs. Geoenergy Science and Engineering, 213405. [doi.org/10.1016/j.geoen.2024.213405](https://doi.org/10.1016/j.geoen.2024.213405)
 
 2. Xu, Z., & Leung, J. Y. (2024). Dynamic Real-Time Production Forecasting Model for Complex Subsurface Flow Systems with Variable-Length Input Sequences. SPE Journal. 1-17. [doi.org/10.2118/221482-PA](https://doi.org/10.2118/221482-PA)
 
@@ -20,12 +20,14 @@ subtitle: Explore My Previous Publications and Research Contributions
 7. Xu, Z., & Leung, J. Y. (2022). Analyzing the Impacts of Meshing and Grid Alignment in Dual Porosity Dual-Permeability Upscaling. SPE Reservoir Evaluation & Engineering, 25(01), 61-80. [doi.org/10.2118/208573-PA](https://doi.org/10.2118/208573-PA)
 
 ## Conference
-1. Xu, Z., Leung, J. Y. (2025, March). Deep Learning-based Production Forecasting For Liquid-rich Gas In The Duvernay Shale Play. In \textbf{SPE Canadian Energy Technology Conference and Exhibition} (25CET-P-432-SPE), Calgary, Alberta, Canada.
+1. Xu, Z., Leung, J. Y. (2025, March). Physics-Constrained Production Forecasting with Direct Fracture Characterization by Field Data. In SPE Annual Technical Conference and Exhibition (SPE-228139-MS), Houston, Texas, USA.
 
-2. Xu, Z., & Leung, J. Y. (2024, September). Graph-Level Feature Embedding with Spatial-Temporal GCN Method for Interconnected Well Production Forecasting. In SPE Annual Technical Conference and Exhibition (SPE-220790-MS), New Orleans, Louisiana, USA.
+2. Xu, Z., Leung, J. Y. (2025, March). Deep Learning-based Production Forecasting For Liquid-rich Gas In The Duvernay Shale Play. In SPE Canadian Energy Technology Conference and Exhibition (25CET-P-432-SPE), Calgary, Alberta, Canada.
+
+3. Xu, Z., & Leung, J. Y. (2024, September). Graph-Level Feature Embedding with Spatial-Temporal GCN Method for Interconnected Well Production Forecasting. In SPE Annual Technical Conference and Exhibition (SPE-220790-MS), New Orleans, Louisiana, USA.
  
-3. Xu, Z., & Leung, J. Y. (2023, October). Shale Gas Production Forecasting with Well Interference Based on Spatial-Temporal Graph Convolutional Network. In SPE Annual Technical Conference and Exhibition (p. D031S032R004), San Antonio, Texas, USA. [doi.org/10.2118/215056-MS](https://doi.org/10.2118/215056-MS)
+4. Xu, Z., & Leung, J. Y. (2023, October). Shale Gas Production Forecasting with Well Interference Based on Spatial-Temporal Graph Convolutional Network. In SPE Annual Technical Conference and Exhibition (p. D031S032R004), San Antonio, Texas, USA. [doi.org/10.2118/215056-MS](https://doi.org/10.2118/215056-MS)
   
-4. Ma, Z., Yuan, Q., Xu, Z., & Leung, J. Y. (2023, October). A Recurrent Neural Network-Based Solvent Chamber Estimation Framework During Warm Solvent Injection in Heterogeneous Reservoirs. In SPE Annual Technical Conference and Exhibition (p. D021S013R001), San Antonio, Texas, USA. [doi.org/10.2118/214984-MS](https://doi.org/10.2118/214984-MS)
+5. Ma, Z., Yuan, Q., Xu, Z., & Leung, J. Y. (2023, October). A Recurrent Neural Network-Based Solvent Chamber Estimation Framework During Warm Solvent Injection in Heterogeneous Reservoirs. In SPE Annual Technical Conference and Exhibition (p. D021S013R001), San Antonio, Texas, USA. [doi.org/10.2118/214984-MS](https://doi.org/10.2118/214984-MS)
   
-5. Xu, Z., & Leung, J. Y. (2023). A Recursively Enhanced GRU Model for Real-Time Production Forecasting in Central Montney Shale Gas Reservoirs. In the International Association for Mathematical Geosciences (IAMG) Conference, Trondheim, Norway.
+6. Xu, Z., & Leung, J. Y. (2023). A Recursively Enhanced GRU Model for Real-Time Production Forecasting in Central Montney Shale Gas Reservoirs. In the International Association for Mathematical Geosciences (IAMG) Conference, Trondheim, Norway.
