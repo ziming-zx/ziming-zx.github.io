@@ -43,7 +43,9 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
 .hero h1 { margin: 0 0 20px; font-family: var(--serif); font-size: clamp(64px, 6.8vw, 94px); font-weight: 400; letter-spacing: -3px; line-height: 1.08; }
 .name-period { color: #a3d5c1; }
 .hero-title { margin: 0 0 14px; font-size: 18px; font-weight: 400; color: #f4f6f2; }
-.hero-meta { display: flex; align-items: center; gap: 13px; color: #d3ded7; font-size: 12px; letter-spacing: .2px; }
+.hero-department { margin: -5px 0 14px; color: #d3ded7; font-size: 12px; }
+.hero-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 13px; color: #d3ded7; font-size: 12px; letter-spacing: .2px; }
+.hero-affiliation { max-width: 100%; }
 .meta-dot { width: 3px; height: 3px; border-radius: 50%; background: #afcabb; }
 .hero-foot { display: flex; justify-content: space-between; gap: 20px; align-items: center; padding-bottom: 24px; }
 .hero-location { display: flex; align-items: center; gap: 9px; font-size: 8px; letter-spacing: 1.6px; color: #e0e9df; }
@@ -93,10 +95,13 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
 .overview-title > span { color: #65927a; }
 .executive-summary { color: #5d695f; font-size: 14px; line-height: 1.95; }
 .executive-summary p { margin: 0; }
+.executive-summary p + p { margin-top: 13px; }
 .research-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 24px; }
 .research-tags span { font-size: 10px; padding: 4px 10px; color: #4f705e; background: #e9eee5; border: 1px solid #dce5d7; border-radius: 2px; }
 .contact-detail { display: grid; grid-template-columns: 64px minmax(0,1fr); gap: 10px; margin: 24px 0 0; padding: 17px 0 0; border-top: 1px solid var(--line); color: #748071; font-size: 10px; line-height: 1.8; }
 .detail-label { padding-top: 1px; font-size: 8px; letter-spacing: 1.4px; color: #566d5c; }
+.contact-values { display: flex; flex-wrap: wrap; gap: 4px 16px; min-width: 0; }
+.contact-values a { overflow-wrap: anywhere; }
 .overview-section { margin-bottom: 51px; }
 .section-header { display: flex; align-items: center; gap: 15px; margin-bottom: 28px; }
 .section-index { color: #7b8f76; font-size: 10px; letter-spacing: 1px; font-variant-numeric: tabular-nums; }
@@ -138,6 +143,7 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
 .inline-arrow { color: #799378; font-size: 12px; margin-left: 3px; white-space: nowrap; }
 .bibliography-item { border-bottom: 1px solid var(--line); padding: 17px 0; }
 .doi-link { font-size: 10px; overflow-wrap: anywhere; }
+.correction-link { display: inline-block; margin-left: 15px; }
 .further-link { display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--line); text-decoration: none; font-size: 12px; color: var(--forest); }
 .further-link:first-of-type { padding-top: 0; }
 .further-link span { color: #7b947b; }
@@ -146,6 +152,7 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
 .site-footer svg { width: 27px; height: 20px; fill: none; stroke: #7c8f73; stroke-width: 1.2; }
 .site-footer a { text-decoration: none; white-space: nowrap; }
 .site-footer a > span { margin-left: 12px; }
+.site-footer .footer-actions { flex-wrap: wrap; gap: 18px; }
 .footer-separator { margin: 0 10px; color: #a6b09e; }
 .print-only { display: none; }
 
@@ -173,6 +180,9 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
   .small-rule { width: 20px; }
   .hero-title { font-size: 15px; max-width: 320px; }
   .hero-meta { font-size: 10px; gap: 9px; }
+  .hero-department { font-size: 11px; }
+  .hero-meta .hero-affiliation { flex-basis: 100%; }
+  .hero-meta .meta-dot { display: none; }
   .hero-foot { align-items: end; gap: 20px; padding-bottom: 21px; }
   .hero-location { font-size: 6px; line-height: 1.8; letter-spacing: 1px; max-width: 215px; gap: 7px; }
   .hero-location svg { flex-shrink: 0; }
@@ -249,6 +259,7 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
   .hero h1 { color: #18231d; font-size: 32pt; letter-spacing: -1px; margin-bottom: 6px; }
   .name-period { color: inherit; }
   .hero-title { color: #18231d; font-size: 12pt; margin-bottom: 4px; }
+  .hero-department { color: #333; margin: 0 0 6px; font-size: 9pt; }
   .hero-meta { color: #444; font-size: 9pt; }
   .resume-layout { display: block; padding-top: 18px; }
   .content-section { margin-bottom: 21px; }

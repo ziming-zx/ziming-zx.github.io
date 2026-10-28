@@ -1,20 +1,45 @@
-- publication: 1. Ma, Z., Yuan, Q., Xu, Z., & Leung, J. Y. (2024). A Dynamic Solvent Chamber Propagation Estimation Framework using RNN for Warm Solvent Injection in Heterogeneous Reservoirs. Geoenergy Science and Engineering, 213405.
+- publication: >-
+    1. Xu, Z., & Leung, J. Y. (2026). Multi-horizon probabilistic shale gas production forecasting using VAE-GAN.
+    <em>Geoenergy Science and Engineering</em>, 263, 214528.
+  doi: https://doi.org/10.1016/j.geoen.2026.214528
+
+- publication: >-
+    2. Xu, Z., & Leung, J. Y. (2025). Spatial-Temporal Graph-Level Feature Embedding for Shale Gas Production Forecasting with Well Interference.
+    <em>SPE Journal</em>, 30(11), 6547–6564.
+  doi: https://doi.org/10.2118/220790-PA
+
+- publication: >-
+    3. Ma, Z., Yuan, Q., Xu, Z., & Leung, J. Y. (2025). A dynamic solvent chamber propagation estimation framework using RNN for warm solvent injection in heterogeneous reservoirs.
+    <em>Geoenergy Science and Engineering</em>, 244, 213405.
   doi: https://doi.org/10.1016/j.geoen.2024.213405
 
-- publication: 2. Xu, Z., & Leung, J. Y. (2024). Dynamic Real-Time Production Forecasting Model for Complex Subsurface Flow Systems with Variable-Length Input Sequences. SPE Journal. 2024;.
-  doi: https://doi.org/10.2118/221482-PA
-
-- publication: 3. Xu, Z., & Leung, J. Y. (2024). Shale Gas Production Forecasting with Well Interference Based on Spatial-Temporal Graph Convolutional Network. SPE Journal. 2024;.
+- publication: >-
+    4. Xu, Z., & Leung, J. Y. (2024). Shale Gas Production Forecasting with Well Interference Based on Spatial-Temporal Graph Convolutional Network.
+    <em>SPE Journal</em>, 29(10), 5120–5131.
   doi: https://doi.org/10.2118/215056-PA
 
-- publication: 4. Xu, Z., & Leung, J. Y. (2024). A novel formulation of RNN-based neural network with real-time updating–An application for dynamic hydraulic fractured shale gas production forecasting. Geoenergy Science and Engineering, 233, 212491.
+- publication: >-
+    5. Xu, Z., & Leung, J. Y. (2024). Dynamic Real-Time Production Forecasting Model for Complex Subsurface Flow Systems with Variable Length Input Sequences.
+    <em>SPE Journal</em>, 29(9), 4510–4526.
+  doi: https://doi.org/10.2118/221482-PA
+
+- publication: >-
+    6. Xu, Z., & Leung, J. Y. (2024). A novel formulation of RNN-based neural network with real-time updating–An application for dynamic hydraulic fractured shale gas production forecasting.
+    <em>Geoenergy Science and Engineering</em>, 233, 212491.
   doi: https://doi.org/10.1016/j.geoen.2023.212491
-  
-- publication: 5. Xu, Z., & Leung, J. Y. (2023). An Improved Dual-Porosity Dual-Permeability Modeling Workflow for Representing Nonplanar Hydraulic Fractures. Gas Science and Engineering, 118, 205108.
+  correction_doi: https://doi.org/10.1016/j.geoen.2023.212550
+
+- publication: >-
+    7. Xu, Z., & Leung, J. Y. (2023). An Improved Dual-Porosity Dual-Permeability Modeling Workflow for Representing Nonplanar Hydraulic Fractures.
+    <em>Gas Science and Engineering</em>, 118, 205108.
   doi: https://doi.org/10.1016/j.jgsce.2023.205108
-  
-- publication: 6. Chen, J., Xu, Z., & Leung, J. Y. (2022). Analysis of Fracture Interference–Coupling of Flow and Geomechanical Computations with Discrete Fracture Modeling Using MRST. Journal of Petroleum Science and Engineering, 219, 111134.
+
+- publication: >-
+    8. Chen, J., Xu, Z., & Leung, J. Y. (2022). Analysis of fracture interference–Coupling of flow and geomechanical computations with discrete fracture modeling using MRST.
+    <em>Journal of Petroleum Science and Engineering</em>, 219, 111134.
   doi: https://doi.org/10.1016/j.petrol.2022.111134
-  
-- publication: 7. Xu, Z., & Leung, J. Y. (2022). Analyzing the Impacts of Meshing and Grid Alignment in Dual Porosity Dual-Permeability Upscaling. SPE Reservoir Evaluation & Engineering, 25(01), 61-80.
+
+- publication: >-
+    9. Xu, Z., & Leung, J. Y. (2022). Analyzing the Impacts of Meshing and Grid Alignment in Dual-Porosity Dual-Permeability Upscaling.
+    <em>SPE Reservoir Evaluation & Engineering</em>, 25(1), 61–80.
   doi: https://doi.org/10.2118/208573-PA

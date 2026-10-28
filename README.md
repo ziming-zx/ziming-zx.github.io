@@ -17,7 +17,9 @@
 主页和简历保留各自的数据和配置。简历页现使用 Banff / Canadian Rockies 主题，
 包含山景封面、侧栏目录、教育与经历时间线，以及独立的手机和打印样式。
 同一条构建命令会分别构建两个站点，再合成一个网站发布产物。
-个人资料目前仍分别位于两个站点的配置中；简历的经历与研究内容保持原样。
+个人资料目前仍分别位于两个站点的配置中。简历已更新为 2025 年 8 月博士毕业、
+2025 年 10 月加入 SINOPEC 的工作信息；论文及会议记录已重新核对，
+来源与核对范围见 `docs/cv-content-sources.md`。
 
 简历视觉样式在 `zx-resume/css/rockies.css`，布局在
 `zx-resume/_layouts/resume.html`，交互在 `zx-resume/assets/rockies.js`。

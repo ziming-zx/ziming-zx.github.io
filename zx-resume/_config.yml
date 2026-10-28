@@ -1,6 +1,6 @@
 # Site settings
 title: "Ziming Xu | Curriculum Vitae"
-description: "Research in deep learning, production forecasting and subsurface modeling at the University of Alberta."
+description: "Ziming Xu, Ph.D. — Senior Research Engineer at SINOPEC Oil Exploration & Development Research Institute, Beijing, China."
 url: "https://ziming-zx.github.io"
 baseurl: "/zx-resume"
 
@@ -24,19 +24,22 @@ sass:
 # Resume settings
 resume_avatar:                  "true"
 resume_name:                    "Ziming Xu"
-resume_title:                   "Ph.D. Candidate in Petroleum Engineering"
+resume_title:                   "Senior Research Engineer"
+resume_affiliation:             "SINOPEC Oil Exploration & Development Research Institute"
+resume_department:              "Oversea Key Project Support Center"
+resume_location:                "Beijing, China"
 
 # used for the contact button in _layouts/resume.html
-resume_contact_email:           "ziming4@ualberta.ca"
+resume_contact_email:           "xuziming.syky@sinopec.com"
+resume_secondary_email:         "ziming4@ualberta.ca"
 
 # the next two items are used for schema itemprops in _layouts/resume.html
-resume_contact_telephone:       "888-8888"
-resume_contact_address:         "6-361 Donadeo Innovation Centre for Engineering, 9211 116th Street, Edmonton, Alberta, Canada T6G 1H9"
+resume_contact_address:         "Beijing, China"
 
-resume_header_contact_info:     "6-361 DICE, 9211 116th St, Edmonton, AB, CA • ziming4@ualberta.ca"
+resume_header_contact_info:     "Beijing, China"
 display_header_contact_info:    "true"
 
-resume_header_intro: "<p>Hello, my name is Ziming Xu, and I am a fourth-year Ph.D. student at the University of Alberta. My research is dedicated to pioneering advancements in production forecasting and optimization through the application of advanced deep learning and numerical methods. I am deeply passionate about machine learning and its potential to solve critical subsurface problems. My work focuses on pushing the boundaries of knowledge in these areas, aiming to make a significant impact on both the academic and industrial fronts.</p>"
+resume_header_intro: "<p>I am a Senior Research Engineer at SINOPEC Oil Exploration &amp; Development Research Institute, working in the Oversea Key Project Support Center in Beijing, China. I completed my Ph.D. in Petroleum Engineering at the University of Alberta in August 2025.</p><p>My research focuses on deep learning, production forecasting and numerical methods for subsurface systems, connecting field measurements, physical understanding and data-driven models.</p>"
 
 # use "yes" to display the email contact button,
 # "no" to display an "I'm not looking for work" message,
@@ -53,9 +56,9 @@ resume_section_activities:      true
 # resume_section_skills:          true
 # resume_section_award:           true
 resume_section_links:           true
-resume_section_associations:    true
-# resume_section_publications:    true
-# resume_section_conferences:     true
+resume_section_publications:    true
+resume_section_preprints:       true
+resume_section_conferences:     true
 # resume_section_interests:       true
 
 # Resume social links

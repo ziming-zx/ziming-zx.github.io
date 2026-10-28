@@ -18,7 +18,8 @@
       <p class="eyebrow"><span class="small-rule"></span> ACADEMIC PROFILE / CURRICULUM VITAE</p>
       <h1 itemprop="name">{{ site.resume_name }}<span class="name-period">.</span></h1>
       <p class="hero-title">{{ site.resume_title }}</p>
-      <div class="hero-meta"><span>University of Alberta</span><span class="meta-dot" aria-hidden="true"></span><span>Edmonton, Canada</span></div>
+      <p class="hero-department">{{ site.resume_department }}</p>
+      <div class="hero-meta"><span class="hero-affiliation">{{ site.resume_affiliation | escape }}</span><span class="meta-dot" aria-hidden="true"></span><span>{{ site.resume_location }}</span></div>
     </div>
     <div class="hero-foot page-width"><span class="hero-location"><svg aria-hidden="true"><use href="#mountain-mark"/></svg> INSPIRED BY BANFF & THE CANADIAN ROCKIES</span><a href="#overview">Explore my work <span aria-hidden="true">↓</span></a></div>
   </header>
@@ -31,7 +32,7 @@
     <aside class="sidebar" aria-label="Profile and section navigation">
       <div class="sidebar-profile">
         {% if site.resume_avatar == 'true' %}<img class="portrait" src="{{ '/images/avatar.jpg' | relative_url }}" alt="{{ site.resume_name }}" width="88" height="88">{% endif %}
-        <div><p class="profile-name">{{ site.resume_name }}</p><p class="profile-location">Edmonton, Alberta, Canada</p></div>
+        <div><p class="profile-name">{{ site.resume_name }}</p><p class="profile-location">{{ site.resume_location }}</p></div>
       </div>
       <a class="contact-button" href="mailto:{{ site.resume_contact_email }}">Get in touch <span aria-hidden="true">↗</span></a>
       <div class="profile-links" aria-label="Academic and professional profiles">
@@ -48,17 +49,17 @@
             {% if site.resume_section_education %}<a href="#education">Education</a>{% endif %}
             {% if site.resume_section_experience %}<a href="#experience">Experience</a>{% endif %}
             {% if site.resume_section_projects %}<a href="#projects">Research projects</a>{% endif %}
-            {% if site.resume_section_activities %}<a href="#activities">Activities & service</a>{% endif %}
+            {% if site.resume_section_activities %}<a href="#activities">Academic activity & service</a>{% endif %}
             {% if site.resume_section_skills %}<a href="#skills">Technical skills</a>{% endif %}
             {% if site.resume_section_award %}<a href="#awards">Awards</a>{% endif %}
             {% if site.resume_section_publications %}<a href="#publications">Publications</a>{% endif %}
+            {% if site.resume_section_preprints %}<a href="#preprints">Preprints</a>{% endif %}
             {% if site.resume_section_conferences %}<a href="#conferences">Conferences</a>{% endif %}
-            {% if site.resume_section_associations %}<a href="#associations">Associations</a>{% endif %}
             {% if site.resume_section_interests %}<a href="#interests">Outside interests</a>{% endif %}
-            {% if site.resume_section_links %}<a href="#links">Further connections</a>{% endif %}
+            {% if site.resume_section_links %}<a href="#links">Corporation</a>{% endif %}
           </nav>
         </details>
-        <div class="sidebar-note"><svg aria-hidden="true"><use href="#mountain-mark"/></svg><p>Curiosity, grounded.<br>Ideas, reaching further.</p><span>ALBERTA, CANADA</span></div>
+        <div class="sidebar-note"><svg aria-hidden="true"><use href="#mountain-mark"/></svg><p>Curiosity, grounded.<br>Ideas, reaching further.</p><span>{{ site.resume_location | upcase }}</span></div>
       </div>
     </aside>
 
@@ -68,7 +69,7 @@
         <h2 id="overview-title" class="overview-title">Exploring what lies<br> beneath the surface<span>.</span></h2>
         <div class="executive-summary" itemprop="description">{{ site.resume_header_intro }}</div>
         <div class="research-tags" aria-label="Research interests"><span>Deep learning</span><span>Production forecasting</span><span>Subsurface modeling</span></div>
-        {% if site.display_header_contact_info == 'true' %}<p class="contact-detail"><span class="detail-label">CONTACT</span><span>{{ site.resume_header_contact_info }}</span></p>{% endif %}
+        {% if site.display_header_contact_info == 'true' %}<div class="contact-detail"><span class="detail-label">CONTACT</span><div class="contact-values"><span>{{ site.resume_header_contact_info }}</span><a href="mailto:{{ site.resume_contact_email }}" aria-label="Work email: {{ site.resume_contact_email }}">{{ site.resume_contact_email }}</a>{% if site.resume_secondary_email %}<a href="mailto:{{ site.resume_secondary_email }}" aria-label="Academic email: {{ site.resume_secondary_email }}">{{ site.resume_secondary_email }}</a>{% endif %}</div></div>{% endif %}
       </section>
 
       {% if site.resume_section_education %}
@@ -95,7 +96,7 @@
         <div class="timeline">
           {% for job in site.data.experience %}
           <article class="timeline-item" itemscope itemprop="worksFor" itemtype="https://schema.org/Organization">
-            <div class="item-date">{{ job.duration }}</div><div class="item-content"><h3 class="item-title">{{ job.position }}</h3><p class="item-subtitle" itemprop="name">{{ job.company }}</p>{% if job.location %}<p class="item-location">{{ job.location }}</p>{% endif %}<div class="item-copy">{{ job.summary }}</div></div>
+            <div class="item-date">{{ job.duration }}</div><div class="item-content"><h3 class="item-title">{{ job.position }}</h3><p class="item-subtitle" itemprop="name">{{ job.company | escape }}</p>{% if job.department %}<p class="item-subtitle">{{ job.department }}</p>{% endif %}{% if job.location %}<p class="item-location">{{ job.location }}</p>{% endif %}{% if job.summary %}<div class="item-copy">{{ job.summary }}</div>{% endif %}</div>
           </article>
           {% endfor %}
         </div>
@@ -122,7 +123,7 @@
 
       {% if site.resume_section_activities %}
       <section class="content-section" id="activities" aria-labelledby="activities-title">
-        <header class="section-header"><span class="section-index" aria-hidden="true"></span><h2 id="activities-title">Activities & service</h2><span class="section-line"></span></header>
+        <header class="section-header"><span class="section-index" aria-hidden="true"></span><h2 id="activities-title">Academic activity & service</h2><span class="section-line"></span></header>
         <div class="compact-list">
           {% for activity in site.data.activity %}
           <article class="compact-item"><div><h3 class="item-title">{% if activity.url %}<a href="{{ activity.url }}">{{ activity.activity }} <span class="inline-arrow" aria-hidden="true">↗</span></a>{% else %}{{ activity.activity }}{% endif %}</h3><p class="item-subtitle">{{ activity.role }}</p>{% if activity.description %}<div class="item-copy">{{ activity.description }}</div>{% endif %}</div><span class="item-date">{{ activity.duration }}</span></article>
@@ -138,28 +139,34 @@
       <section class="content-section" id="awards" aria-labelledby="awards-title"><header class="section-header"><span class="section-index" aria-hidden="true"></span><h2 id="awards-title">Awards</h2><span class="section-line"></span></header>{% for award in site.data.awards %}<article class="compact-item"><h3 class="item-title">{{ award.award }}</h3><span class="item-date">{{ award.year }}</span></article>{% endfor %}</section>
       {% endif %}
       {% if site.resume_section_publications %}
-      <section class="content-section" id="publications" aria-labelledby="publications-title"><header class="section-header"><span class="section-index" aria-hidden="true"></span><h2 id="publications-title">Journal publications</h2><span class="section-line"></span></header>{% for publication in site.data.publications %}<article class="bibliography-item"><div class="item-copy">{{ publication.publication }}</div>{% if publication.doi %}<a class="doi-link" href="{{ publication.doi }}">{{ publication.doi }} ↗</a>{% endif %}</article>{% endfor %}</section>
-      {% endif %}
-      {% if site.resume_section_conferences %}
-      <section class="content-section" id="conferences" aria-labelledby="conferences-title"><header class="section-header"><span class="section-index" aria-hidden="true"></span><h2 id="conferences-title">Conferences</h2><span class="section-line"></span></header>{% for conference in site.data.conferences %}<article class="bibliography-item"><div class="item-copy">{{ conference.conference }}</div>{% if conference.doi %}<a class="doi-link" href="{{ conference.doi }}">{{ conference.doi }} ↗</a>{% endif %}</article>{% endfor %}</section>
-      {% endif %}
-
-      {% if site.resume_section_associations %}
-      <section class="content-section" id="associations" aria-labelledby="associations-title">
-        <header class="section-header"><span class="section-index" aria-hidden="true"></span><h2 id="associations-title">Professional associations</h2><span class="section-line"></span></header>
-        {% for association in site.data.associations %}<article class="compact-item" itemscope itemprop="memberOf" itemtype="https://schema.org/Organization"><div><h3 class="item-title" itemprop="name">{% if association.url %}<a href="{{ association.url }}">{{ association.organization }} <span class="inline-arrow" aria-hidden="true">↗</span></a>{% else %}{{ association.organization }}{% endif %}</h3><p class="item-subtitle">{{ association.role }}</p>{% if association.summary %}<div class="item-copy">{{ association.summary }}</div>{% endif %}</div><span class="item-date">{{ association.year }}</span></article>{% endfor %}
+      <section class="content-section" id="publications" aria-labelledby="publications-title">
+        <header class="section-header"><span class="section-index" aria-hidden="true"></span><h2 id="publications-title">Journal publications</h2><span class="section-line"></span></header>
+        {% for publication in site.data.publications %}
+        <article class="bibliography-item">
+          <div class="item-copy">{{ publication.publication }}</div>
+          {% if publication.doi %}<a class="doi-link" href="{{ publication.doi }}">{{ publication.doi }} ↗</a>{% endif %}
+          {% if publication.correction_doi %}<a class="doi-link correction-link" href="{{ publication.correction_doi }}">Corrigendum ↗</a>{% endif %}
+        </article>
+        {% endfor %}
       </section>
       {% endif %}
+      {% if site.resume_section_preprints %}
+      <section class="content-section" id="preprints" aria-labelledby="preprints-title"><header class="section-header"><span class="section-index" aria-hidden="true"></span><h2 id="preprints-title">Preprints</h2><span class="section-line"></span></header>{% for preprint in site.data.preprints %}<article class="bibliography-item"><div class="item-copy">{{ preprint.publication }}</div>{% if preprint.doi %}<a class="doi-link" href="{{ preprint.doi }}">{{ preprint.doi }} ↗</a>{% endif %}</article>{% endfor %}</section>
+      {% endif %}
+      {% if site.resume_section_conferences %}
+      <section class="content-section" id="conferences" aria-labelledby="conferences-title"><header class="section-header"><span class="section-index" aria-hidden="true"></span><h2 id="conferences-title">Conferences</h2><span class="section-line"></span></header>{% for conference in site.data.conferences %}<article class="bibliography-item"><div class="item-copy">{{ conference.conference }}</div>{% if conference.doi %}<a class="doi-link" href="{{ conference.doi }}">{{ conference.doi }} ↗</a>{% elsif conference.url %}<a class="doi-link" href="{{ conference.url }}">Conference abstract ↗</a>{% endif %}</article>{% endfor %}</section>
+      {% endif %}
+
       {% if site.resume_section_interests %}
       <section class="content-section" id="interests" aria-labelledby="interests-title"><header class="section-header"><span class="section-index" aria-hidden="true"></span><h2 id="interests-title">Outside interests</h2><span class="section-line"></span></header><ul class="resume-item-list">{% for interest in site.data.interests %}<li>{{ interest.description }}</li>{% endfor %}</ul></section>
       {% endif %}
       {% if site.resume_section_links %}
-      <section class="content-section links-section" id="links" aria-labelledby="links-title"><header class="section-header"><span class="section-index" aria-hidden="true"></span><h2 id="links-title">Further connections</h2><span class="section-line"></span></header>{% for link in site.data.links %}<a class="further-link" href="{{ link.url }}">{{ link.description }} <span aria-hidden="true">↗</span></a>{% endfor %}{% if site.resume_translation == 'yes' %}<a class="further-link" href="{{ site.url }}/zx-resume-chinese/" lang="zh">中文简历 <span aria-hidden="true">↗</span></a>{% endif %}</section>
+      <section class="content-section links-section" id="links" aria-labelledby="links-title"><header class="section-header"><span class="section-index" aria-hidden="true"></span><h2 id="links-title">Corporation</h2><span class="section-line"></span></header>{% for link in site.data.links %}<a class="further-link" href="{{ link.url }}">{{ link.description }} <span aria-hidden="true">↗</span></a>{% endfor %}</section>
       {% endif %}
       {% if site.resume_print_social_links %}<section class="print-only print-profiles" aria-label="Online profiles">{% include print-social-links.html %}</section>{% endif %}
     </main>
   </div>
 
-  <footer class="site-footer page-width"><div><svg aria-hidden="true"><use href="#mountain-mark"/></svg><span>{{ site.resume_name }} <span class="footer-separator">/</span> Research, learning & discovery.</span></div><a href="#top">Back to the summit <span aria-hidden="true">↑</span></a></footer>
+  <footer class="site-footer page-width"><div><svg aria-hidden="true"><use href="#mountain-mark"/></svg><span>{{ site.resume_name }} <span class="footer-separator">/</span> Research, learning & discovery.</span></div><div class="footer-actions">{% if site.resume_translation == 'yes' %}<a href="{{ site.url }}/zx-resume-chinese/" lang="zh">中文简历 ↗</a>{% endif %}<a href="#top">Back to the summit <span aria-hidden="true">↑</span></a></div></footer>
 </body>
 </html>

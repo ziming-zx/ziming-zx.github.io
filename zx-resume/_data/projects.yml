@@ -1,9 +1,9 @@
 # Projects
-# Physics-Informed Deep Learning for Shale Gas Production Forecasting
-- project: Physics-Informed Deep Learning for Shale Gas Production Forecasting
+# AssimNet
+- project: "AssimNet: Bridging Field Measurements and Numerical Simulations"
   duration: April 2023 &mdash; Present
-  # url: "#"
-  description: <ul class="resume-item-list"><li>Developed neural network solution for 3D Diffusivity equation.</li><li>Conducted field-scale experiments with a combined physics and data-driven model.</li></ul>
+  url: https://doi.org/10.2139/ssrn.5974792
+  description: <ul class="resume-item-list"><li>Developed a hybrid neural framework that translates field measurements into simulation-ready inputs and calibrates production forecasts during training.</li><li>Evaluated the model on synthetic cases and more than 1,400 Montney shale gas wells, improving forecasting and generalization under limited-data conditions.</li></ul>
 
 # Graph Convolution for Capturing Well Interference in Production Forecasting
 - project: Graph Convolution for Capturing Well Interference in Production Forecasting
