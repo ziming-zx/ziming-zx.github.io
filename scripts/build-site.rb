@@ -20,7 +20,7 @@ Dir.chdir(root) do
   FileUtils.rm_f(File.join(destination, "Gemfile.lock"))
   File.write(File.join(destination, ".nojekyll"), "")
 
-  %w[index.html zx-resume/index.html zx-resume/css/main.css].each do |path|
+  %w[index.html zx-resume/index.html zx-resume/css/rockies.css zx-resume/assets/rockies.js zx-resume/images/banff-rockies.webp].each do |path|
     raise "Missing build output: #{path}" unless File.file?(File.join(destination, path))
   end
   %w[projects scripts zx-resume/CNAME zx-resume/Gemfile.lock].each do |path|

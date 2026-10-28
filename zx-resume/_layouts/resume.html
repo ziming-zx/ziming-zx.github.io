@@ -1,326 +1,165 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+{% include head.html %}
+<body>
+  <a class="skip-link" href="#main-content">Skip to resume</a>
+  <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="mountain-mark" viewBox="0 0 48 32"><path d="M2 29 17 5l8 13 6-10 15 21H2Z"/><path d="m11 15 6 3 5-5m5 1 4 4 4-4"/></symbol>
+    <symbol id="arrow-mark" viewBox="0 0 24 24"><path d="M5 19 19 5M5 5h14v14"/></symbol>
+  </defs></svg>
 
-  {% include head.html %}
+  <header class="hero" id="top">
+    <div class="hero-shade"></div>
+    <nav class="topbar page-width" aria-label="Main navigation">
+      <a class="wordmark" href="{{ site.url }}/"><svg aria-hidden="true"><use href="#mountain-mark"/></svg><span>ZIMING <span class="wordmark-light">SPACE</span></span></a>
+      <div class="topbar-links"><a href="{{ site.url }}/">Research blog <span aria-hidden="true">↗</span></a><span class="topbar-divider"></span><span aria-current="page">Curriculum vitae</span></div>
+    </nav>
+    <div class="hero-content page-width">
+      <p class="eyebrow"><span class="small-rule"></span> ACADEMIC PROFILE / CURRICULUM VITAE</p>
+      <h1 itemprop="name">{{ site.resume_name }}<span class="name-period">.</span></h1>
+      <p class="hero-title">{{ site.resume_title }}</p>
+      <div class="hero-meta"><span>University of Alberta</span><span class="meta-dot" aria-hidden="true"></span><span>Edmonton, Canada</span></div>
+    </div>
+    <div class="hero-foot page-width"><span class="hero-location"><svg aria-hidden="true"><use href="#mountain-mark"/></svg> INSPIRED BY BANFF & THE CANADIAN ROCKIES</span><a href="#overview">Explore my work <span aria-hidden="true">↓</span></a></div>
+  </header>
 
-  <body class="theme-{% if site.resume_theme %}{{ site.resume_theme }}{% endif %}">
+  <div class="document-bar"><div class="page-width document-bar-inner"><span><span class="status-dot" aria-hidden="true"></span> RESEARCH · ENGINEERING · MACHINE LEARNING</span><button class="print-button" type="button" data-print><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8V3h10v5M7 17H4V9h16v8h-3M7 14h10v7H7zM16 11h1"/></svg>Print / Save PDF</button></div></div>
 
-    <div class="wrapper" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="telephone" content="{{ site.resume_contact_telephone }}"/>
-      <meta itemprop="address" content="{{ site.resume_contact_address }}"/>
+  <div class="resume-layout page-width" itemscope itemtype="https://schema.org/Person">
+    <meta itemprop="name" content="{{ site.resume_name }}">
+    <meta itemprop="email" content="{{ site.resume_contact_email }}">
+    <aside class="sidebar" aria-label="Profile and section navigation">
+      <div class="sidebar-profile">
+        {% if site.resume_avatar == 'true' %}<img class="portrait" src="{{ '/images/avatar.jpg' | relative_url }}" alt="{{ site.resume_name }}" width="88" height="88">{% endif %}
+        <div><p class="profile-name">{{ site.resume_name }}</p><p class="profile-location">Edmonton, Alberta, Canada</p></div>
+      </div>
+      <a class="contact-button" href="mailto:{{ site.resume_contact_email }}">Get in touch <span aria-hidden="true">↗</span></a>
+      <div class="profile-links" aria-label="Academic and professional profiles">
+        {% if site.resume_social_links.resume_github_url %}<a href="{{ site.resume_social_links.resume_github_url }}">GitHub <span aria-hidden="true">↗</span></a>{% endif %}
+        {% if site.resume_social_links.resume_linkedin_url %}<a href="{{ site.resume_social_links.resume_linkedin_url }}">LinkedIn <span aria-hidden="true">↗</span></a>{% endif %}
+        {% if site.resume_social_links.resume_medium_url %}<a href="{{ site.resume_social_links.resume_medium_url }}">Google Scholar <span aria-hidden="true">↗</span></a>{% endif %}
+        {% if site.resume_social_links.resume_website_url %}<a href="{{ site.resume_social_links.resume_website_url }}">ORCID <span aria-hidden="true">↗</span></a>{% endif %}
+      </div>
+      <div class="sidebar-sticky">
+        <details class="section-directory" open>
+          <summary>ON THIS PAGE <span aria-hidden="true">⌄</span></summary>
+          <nav class="section-nav" aria-label="Resume sections">
+            <a class="is-active" href="#overview" aria-current="location">Overview</a>
+            {% if site.resume_section_education %}<a href="#education">Education</a>{% endif %}
+            {% if site.resume_section_experience %}<a href="#experience">Experience</a>{% endif %}
+            {% if site.resume_section_projects %}<a href="#projects">Research projects</a>{% endif %}
+            {% if site.resume_section_activities %}<a href="#activities">Activities & service</a>{% endif %}
+            {% if site.resume_section_skills %}<a href="#skills">Technical skills</a>{% endif %}
+            {% if site.resume_section_award %}<a href="#awards">Awards</a>{% endif %}
+            {% if site.resume_section_publications %}<a href="#publications">Publications</a>{% endif %}
+            {% if site.resume_section_conferences %}<a href="#conferences">Conferences</a>{% endif %}
+            {% if site.resume_section_associations %}<a href="#associations">Associations</a>{% endif %}
+            {% if site.resume_section_interests %}<a href="#interests">Outside interests</a>{% endif %}
+            {% if site.resume_section_links %}<a href="#links">Further connections</a>{% endif %}
+          </nav>
+        </details>
+        <div class="sidebar-note"><svg aria-hidden="true"><use href="#mountain-mark"/></svg><p>Curiosity, grounded.<br>Ideas, reaching further.</p><span>ALBERTA, CANADA</span></div>
+      </div>
+    </aside>
 
-      <header class="page-header">
+    <main class="resume-main" id="main-content">
+      <section class="content-section overview-section" id="overview" aria-labelledby="overview-title">
+        <p class="section-kicker">THE INTERSECTION OF DATA & ENERGY</p>
+        <h2 id="overview-title" class="overview-title">Exploring what lies<br> beneath the surface<span>.</span></h2>
+        <div class="executive-summary" itemprop="description">{{ site.resume_header_intro }}</div>
+        <div class="research-tags" aria-label="Research interests"><span>Deep learning</span><span>Production forecasting</span><span>Subsurface modeling</span></div>
+        {% if site.display_header_contact_info == 'true' %}<p class="contact-detail"><span class="detail-label">CONTACT</span><span>{{ site.resume_header_contact_info }}</span></p>{% endif %}
+      </section>
 
-        <!-- You can turn off the avatar in _config.yml by setting to false -->
-        {% if site.resume_avatar == 'true' %}
-        <img src="images/avatar.jpg" alt="my photo" class="avatar no-print" itemprop="image">
-        {% endif %}
-
-        <!-- Your name is defined in the _config.yml file -->
-        <h1 class="header-name" itemprop="name">{{ site.resume_name }}</h1>
-
-        <!-- To display contact info here, change `display_header_contact_info` value in _config.yml to true -->
-        {% if site.display_header_contact_info == 'true' %}
-        <div class="header-contact-info">
-          <p>{{ site.resume_header_contact_info }}</p>
-        </div>
-        {% endif %}
-
-        <div class="title-bar no-print">
-
-          <!-- Your title is also defined in the _config.yml file -->
-          <h2 class="header-title" itemprop="jobTitle">{{ site.resume_title }}</h2>
-
-          <!-- This is the markup for the icon links; moved out to an include because it's very verbose, and you shouldn't ever need to edit the markup (unless you want to re-order the icons); if you want to customize which links appear, define them in the _config.yml file -->
-          {% include icon-links.html %}
-        </div>
-
-        <div class="executive-summary" itemprop="description">
-          {{ site.resume_header_intro }}
-        </div>
-
-        {% if site.resume_translation == 'yes' %}
-        <a href="https://ziming-zx.github.io/zx-resume-chinese/" class="contact-button no-print" itemprop="url">
-          <i class="fas fa-language"></i> English/中文
-        </a>
-        {% else %}
-        <a href="mailto:{{ site.resume_contact_email }}" class="contact-button no-print" itemprop="email">Contact me</a>
-        {% endif %}
-
-      </header>
-      
-      <!####################>
-      <!# Education #>
-      <!####################>
       {% if site.resume_section_education %}
-      <!-- begin Education -->
-      <section class="content-section">
-        <header class="section-header">
-          <h2>Education</h2>
-        </header>
-
-        {% for education in site.data.education %}
-        <div class="resume-item" itemscope itemprop="alumniOf" itemtype="http://schema.org/CollegeOrUniversity">
-          <h3 class="resume-item-title" itemprop="name">{% if education.url %}<a href="{{ education.url }}">{{ education.uni }}</a>{% else %}{{ education.uni }}{% endif %}</h3>
-          <h4 class="resume-item-details group" itemprop="description">{{ education.degree }} &bull; {{ education.year }}</h4>
-          <h5 class="resume-item-details award-title" itemprop="description">{{ education.award }}</h5>
-          <p class="resume-item-copy" itemprop="description">
-            <ul class="resume-item-list">
-              {% for award in education.awards %}
-              <li>{{ award.award }}</li>
-              {% endfor %}
-            </ul>
-
-
-          <p class="resume-item-copy">{{ education.summary }}</p>
+      <section class="content-section" id="education" aria-labelledby="education-title">
+        <header class="section-header"><span class="section-index" aria-hidden="true"></span><h2 id="education-title">Education</h2><span class="section-line"></span></header>
+        <div class="timeline">
+          {% for education in site.data.education %}
+          <article class="timeline-item" itemscope itemprop="alumniOf" itemtype="https://schema.org/CollegeOrUniversity">
+            <div class="item-date">{{ education.year }}</div>
+            <div class="item-content"><h3 class="item-title">{{ education.degree }}</h3><p class="item-subtitle" itemprop="name">{% if education.url %}<a href="{{ education.url }}">{{ education.uni }}</a>{% else %}{{ education.uni }}{% endif %}</p>
+              {% if education.award %}<p class="item-copy">{{ education.award }}</p>{% endif %}
+              {% if education.awards %}<ul class="resume-item-list">{% for award in education.awards %}<li>{{ award.award }}</li>{% endfor %}</ul>{% endif %}
+              {% if education.summary %}<div class="item-location">{{ education.summary }}</div>{% endif %}
+            </div>
+          </article>
+          {% endfor %}
         </div>
-        {% endfor %}
       </section>
-      <!-- end Education -->
       {% endif %}
-      
-      <!####################>
-      <!# Experience #>
-      <!####################>
+
       {% if site.resume_section_experience %}
-      <!-- begin Experience -->
-      <section class="content-section">
-
-        <header class="section-header">
-          <h2>Experience</h2>
-        </header>
-
-        {% for job in site.data.experience %}
-        <div class="resume-item" itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
-          <h3 class="resume-item-title" itemprop="name">{{ job.company }}</h3>
-          <h4 class="resume-item-details" itemprop="description">{{ job.position }} &bull; {{ job.duration }}</h4>
-          <h4 class="resume-item-copy" itemprop="description">{{ job.location }}</h4>
-          <p class="resume-item-copy">{{ job.summary }}</p>
-        </div><!-- end of resume-item -->
-        {% endfor %}
-
+      <section class="content-section" id="experience" aria-labelledby="experience-title">
+        <header class="section-header"><span class="section-index" aria-hidden="true"></span><h2 id="experience-title">Experience</h2><span class="section-line"></span></header>
+        <div class="timeline">
+          {% for job in site.data.experience %}
+          <article class="timeline-item" itemscope itemprop="worksFor" itemtype="https://schema.org/Organization">
+            <div class="item-date">{{ job.duration }}</div><div class="item-content"><h3 class="item-title">{{ job.position }}</h3><p class="item-subtitle" itemprop="name">{{ job.company }}</p>{% if job.location %}<p class="item-location">{{ job.location }}</p>{% endif %}<div class="item-copy">{{ job.summary }}</div></div>
+          </article>
+          {% endfor %}
+        </div>
       </section>
-      <!-- end Experience -->
       {% endif %}
-      
-      <!####################>
-      <!# Project #>
-      <!####################>
+
       {% if site.resume_section_projects %}
-      <!-- begin Projects -->
-      <section class="content-section">
-        <header class="section-header">
-          <h2>Projects</h2>
-        </header>
-
-        {% for project in site.data.projects %}
-        <div class="resume-item" itemscope itemtype="http://schema.org/CreativeWork">
-          <meta itemprop="creator" content="{{ site.resume_name }}" itemtype="http://schema.org/Person" />
-          <h3 class="resume-item-title" itemprop="name">{% if project.url %}<a href="{{ project.url }}" itemprop="url">{{ project.project }}</a>{% else %}{{ project.project }}{% endif %}</h3>
-          <h4 class="resume-item-details" itemprop="description">{{ project.role }}  &bull; {{ project.duration }}</h4>
-          <p class="resume-item-copy">{{ project.description }}</p>
+      <section class="content-section" id="projects" aria-labelledby="projects-title">
+        <header class="section-header"><span class="section-index" aria-hidden="true"></span><h2 id="projects-title">Research projects</h2><span class="section-line"></span></header>
+        <p class="section-intro">Connecting physical understanding with data-driven discovery.</p>
+        <div class="project-list">
+          {% for project in site.data.projects %}
+          <article class="project-item" itemscope itemtype="https://schema.org/CreativeWork">
+            <meta itemprop="creator" content="{{ site.resume_name }}">
+            <div class="project-topline"><span class="project-number">PROJECT / {% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span><span class="item-date">{{ project.duration }}</span></div>
+            <h3 class="project-title" itemprop="name">{% if project.url %}<a href="{{ project.url }}" itemprop="url">{{ project.project }} <svg aria-hidden="true"><use href="#arrow-mark"/></svg></a>{% else %}{{ project.project }}{% endif %}</h3>
+            {% if project.role %}<p class="item-subtitle">{{ project.role }}</p>{% endif %}
+            <div class="item-copy" itemprop="description">{{ project.description }}</div>
+          </article>
+          {% endfor %}
         </div>
-        {% endfor %}
-
       </section>
-      <!-- end Projects -->
       {% endif %}
 
-      <!####################>
-      <!# Activities #>
-      <!####################>
       {% if site.resume_section_activities %}
-      <!-- begin Activities -->
-      <section class="content-section">
-        <header class="section-header">
-          <h2>Activities</h2>
-        </header>
-      
-        {% for activity in site.data.activity %}
-        <div class="resume-item" itemscope itemtype="http://schema.org/CreativeWork">
-          <meta itemprop="creator" content="{{ site.resume_name }}" itemtype="http://schema.org/Person" />
-          <h4 class="resume-item-title" itemprop="name">{% if activity.url %}<a href="{{ activity.url }}" itemprop="url">{{ activity.activity }}</a>{% else %}{{ activity.activity }}{% endif %}</h4>
-          <p class="resume-item-detials" itemprop="description">{{ activity.role }} &bull; {{ activity.duration }}</p>
-          <p class="resume-item-copy">{{ activity.description }}</p>
+      <section class="content-section" id="activities" aria-labelledby="activities-title">
+        <header class="section-header"><span class="section-index" aria-hidden="true"></span><h2 id="activities-title">Activities & service</h2><span class="section-line"></span></header>
+        <div class="compact-list">
+          {% for activity in site.data.activity %}
+          <article class="compact-item"><div><h3 class="item-title">{% if activity.url %}<a href="{{ activity.url }}">{{ activity.activity }} <span class="inline-arrow" aria-hidden="true">↗</span></a>{% else %}{{ activity.activity }}{% endif %}</h3><p class="item-subtitle">{{ activity.role }}</p>{% if activity.description %}<div class="item-copy">{{ activity.description }}</div>{% endif %}</div><span class="item-date">{{ activity.duration }}</span></article>
+          {% endfor %}
         </div>
-        {% endfor %}
-      
       </section>
-      <!-- end Activities -->
       {% endif %}
 
-      <!####################>
-      <!# Skills #>
-      <!####################>
       {% if site.resume_section_skills %}
-      <!-- begin Skills -->
-      <section class="content-section">
-
-        <header class="section-header">
-          <h2>Technical Skills</h2>
-        </header>
-        {% for skill in site.data.skills %}
-        <div class="resume-item">
-          <h4 class="resume-item-title">{{ skill.skill }}</h4>
-          <p class="resume-item-copy">{{ skill.description }}</p>
-        </div>
-        {% endfor %}
-
-      </section>
-      <!-- end Skills -->
+      <section class="content-section" id="skills" aria-labelledby="skills-title"><header class="section-header"><span class="section-index" aria-hidden="true"></span><h2 id="skills-title">Technical skills</h2><span class="section-line"></span></header>{% for skill in site.data.skills %}<article class="compact-item"><h3 class="item-title">{{ skill.skill }}</h3><div class="item-copy">{{ skill.description }}</div></article>{% endfor %}</section>
       {% endif %}
-      
-      <!####################>
-      <!# Award #>
-      <!####################>
       {% if site.resume_section_award %}
-      <!-- begin Award -->
-      <section class="content-section">
-
-        <header class="section-header">
-          <h2>Awards</h2>
-        </header>
-        {% for award in site.data.awards %}
-        <div class="resume-item">
-          <h4 class="resume-item-title">{{ award.award }}</h4>
-          <p class="resume-item-copy"> &bull; {{ award.year }}</p>
-        </div>
-        {% endfor %}
-
-      </section>
-      <!-- end Award -->
+      <section class="content-section" id="awards" aria-labelledby="awards-title"><header class="section-header"><span class="section-index" aria-hidden="true"></span><h2 id="awards-title">Awards</h2><span class="section-line"></span></header>{% for award in site.data.awards %}<article class="compact-item"><h3 class="item-title">{{ award.award }}</h3><span class="item-date">{{ award.year }}</span></article>{% endfor %}</section>
       {% endif %}
-      
-      <!####################>
-      <!# Publicataion #>
-      <!####################>
       {% if site.resume_section_publications %}
-      <!-- begin Publications -->
-      <section class="content-section">
-        <header class="section-header">
-          <h2>Journal Publications</h2>
-        </header>
-      
-        {% for publication in site.data.publications %}
-        <div class="resume-item">
-          <h4 class="resume-item-copy">{{ publication.publication }}</h4>
-          {% if publication.doi %}
-          <p class="resume-item-copy"><strong>DOI:</strong> <a href="{{ publication.doi }}" target="_blank">{{ publication.doi }}</a></p>
-          {% endif %}
-        </div>
-        {% endfor %}
-      
-      </section>
-      <!-- end Publications -->
+      <section class="content-section" id="publications" aria-labelledby="publications-title"><header class="section-header"><span class="section-index" aria-hidden="true"></span><h2 id="publications-title">Journal publications</h2><span class="section-line"></span></header>{% for publication in site.data.publications %}<article class="bibliography-item"><div class="item-copy">{{ publication.publication }}</div>{% if publication.doi %}<a class="doi-link" href="{{ publication.doi }}">{{ publication.doi }} ↗</a>{% endif %}</article>{% endfor %}</section>
       {% endif %}
-      
-      <!####################>
-      <!# Conference #>
-      <!####################>
       {% if site.resume_section_conferences %}
-      <!-- begin Conferences -->
-      <section class="content-section">
-        <header class="section-header">
-          <h2>Conferences</h2>
-        </header>
-      
-        {% for conference in site.data.conferences %}
-        <div class="resume-item">
-          <h4 class="resume-item-copy">{{ conference.conference }}</h4>
-          {% if conference.doi %}
-          <p class="resume-item-copy"><strong>DOI:</strong> <a href="{{ conference.doi }}" target="_blank">{{ conference.doi }}</a></p>
-          {% endif %}
-        </div>
-        {% endfor %}
-
-      </section>
-      <!-- end Conferences -->
+      <section class="content-section" id="conferences" aria-labelledby="conferences-title"><header class="section-header"><span class="section-index" aria-hidden="true"></span><h2 id="conferences-title">Conferences</h2><span class="section-line"></span></header>{% for conference in site.data.conferences %}<article class="bibliography-item"><div class="item-copy">{{ conference.conference }}</div>{% if conference.doi %}<a class="doi-link" href="{{ conference.doi }}">{{ conference.doi }} ↗</a>{% endif %}</article>{% endfor %}</section>
       {% endif %}
-      
 
       {% if site.resume_section_associations %}
-      <!-- begin Associations -->
-      <section class="content-section">
-
-        <header class="section-header">
-          <h2>Associations</h2>
-        </header>
-
-        {% for association in site.data.associations %}
-        <div class="resume-item" itemscope itemprop="memberOf" itemtype="http://schema.org/Organization">
-          <h3 class="resume-item-title" itemprop="name">{% if association.url %}<a href="{{ association.url }}">{{ association.organization }}</a>{% else %}{{ association.organization }}{% endif %}</h3>
-          <h4 class="resume-item-details" itemprop="description">{{ association.role }} &bull; {{ association.year }}</h4>
-          <p class="resume-item-copy">{{ association.summary }}</p>
-        </div>
-        {% endfor %}
-
+      <section class="content-section" id="associations" aria-labelledby="associations-title">
+        <header class="section-header"><span class="section-index" aria-hidden="true"></span><h2 id="associations-title">Professional associations</h2><span class="section-line"></span></header>
+        {% for association in site.data.associations %}<article class="compact-item" itemscope itemprop="memberOf" itemtype="https://schema.org/Organization"><div><h3 class="item-title" itemprop="name">{% if association.url %}<a href="{{ association.url }}">{{ association.organization }} <span class="inline-arrow" aria-hidden="true">↗</span></a>{% else %}{{ association.organization }}{% endif %}</h3><p class="item-subtitle">{{ association.role }}</p>{% if association.summary %}<div class="item-copy">{{ association.summary }}</div>{% endif %}</div><span class="item-date">{{ association.year }}</span></article>{% endfor %}
       </section>
-      <!-- end Associations -->
       {% endif %}
-
       {% if site.resume_section_interests %}
-      <!-- begin Interests -->
-      <section class="content-section">
-
-        <header class="section-header">
-          <h2>Outside Interests</h2>
-        </header>
-
-        <div class="resume-item">
-          <ul class="resume-item-list">
-            {% for interest in site.data.interests %}
-            <li>{{ interest.description }}</li>
-            {% endfor %}
-          </ul>
-        </div>
-
-      </section>
-      <!-- end Interests -->
+      <section class="content-section" id="interests" aria-labelledby="interests-title"><header class="section-header"><span class="section-index" aria-hidden="true"></span><h2 id="interests-title">Outside interests</h2><span class="section-line"></span></header><ul class="resume-item-list">{% for interest in site.data.interests %}<li>{{ interest.description }}</li>{% endfor %}</ul></section>
       {% endif %}
-
       {% if site.resume_section_links %}
-      <!-- begin Links -->
-      <section class="content-section">
-
-        <header class="section-header">
-          <h2>Additional Links</h2>
-        </header>
-
-        <div class="resume-item">
-          <ul class="resume-item-list">
-            {% for link in site.data.links %}
-            <li><a href={{ link.url }} itemprop="url">{{ link.description }}</a></li>
-            {% endfor %}
-          </ul>
-        </div>
-
-      </section>
-      <!-- end Links -->
+      <section class="content-section links-section" id="links" aria-labelledby="links-title"><header class="section-header"><span class="section-index" aria-hidden="true"></span><h2 id="links-title">Further connections</h2><span class="section-line"></span></header>{% for link in site.data.links %}<a class="further-link" href="{{ link.url }}">{{ link.description }} <span aria-hidden="true">↗</span></a>{% endfor %}{% if site.resume_translation == 'yes' %}<a class="further-link" href="{{ site.url }}/zx-resume-chinese/" lang="zh">中文简历 <span aria-hidden="true">↗</span></a>{% endif %}</section>
       {% endif %}
+      {% if site.resume_print_social_links %}<section class="print-only print-profiles" aria-label="Online profiles">{% include print-social-links.html %}</section>{% endif %}
+    </main>
+  </div>
 
-      {% if site.resume_print_social_links %}
-      <!-- begin Print Social Links -->
-      <section class="content-section print-only">
-
-        <header class="section-header">
-          <h2>Social Links</h2>
-        </header>
-
-        <div class="resume-item">
-        {% include print-social-links.html %}
-        </div>
-
-      </section>
-      <!-- end Print Social Links -->
-      {% endif %}
-
-      <footer class="page-footer">
-        <p class="footer-line">Powered by <a href="https://ziming-zx.github.io/zx-resume/"> Ziming Xu</a>. Follow me on <a href="https://github.com/ziming-zx">GitHub</a>.</p>
-        <p class="footer-line">Wish you a great day! ;-)</p>
-      </footer>
-
-    </div>
-
-  </body>
-
+  <footer class="site-footer page-width"><div><svg aria-hidden="true"><use href="#mountain-mark"/></svg><span>{{ site.resume_name }} <span class="footer-separator">/</span> Research, learning & discovery.</span></div><a href="#top">Back to the summit <span aria-hidden="true">↑</span></a></footer>
+</body>
 </html>

@@ -1,6 +1,6 @@
 # Site settings
-title: "Ziming Xu Website Resume"
-description: "A resume built on GitHub Pages sites."
+title: "Ziming Xu | Curriculum Vitae"
+description: "Research in deep learning, production forecasting and subsurface modeling at the University of Alberta."
 url: "https://ziming-zx.github.io"
 baseurl: "/zx-resume"
 
@@ -72,7 +72,7 @@ resume_social_links:
 resume_print_social_links:      true
 
 # Design settings
-resume_theme:                   default
+resume_theme:                   rockies
 
 # Note: when editing locally, remember to restart
 # your Jekyll server when you edit this file. Changes

@@ -14,9 +14,14 @@
 | TradingAgents-CN | `projects/TradingAgents-CN/` | 独立运行，不随静态网站发布 |
 
 这是一个真正的单仓库，不使用 submodule，子目录中没有嵌套的 `.git`。
-主页和简历仍保留各自的模板、数据和配置，避免这次合并改变现有页面。
+主页和简历保留各自的数据和配置。简历页现使用 Banff / Canadian Rockies 主题，
+包含山景封面、侧栏目录、教育与经历时间线，以及独立的手机和打印样式。
 同一条构建命令会分别构建两个站点，再合成一个网站发布产物。
-个人资料目前仍分别位于两个站点的配置中，本次没有重写内容或统一设计。
+个人资料目前仍分别位于两个站点的配置中；简历的经历与研究内容保持原样。
+
+简历视觉样式在 `zx-resume/css/rockies.css`，布局在
+`zx-resume/_layouts/resume.html`，交互在 `zx-resume/assets/rockies.js`。
+图片生成记录及验证说明见 `docs/rockies-cv-design.md`。
 
 ## 本地构建与预览
 
