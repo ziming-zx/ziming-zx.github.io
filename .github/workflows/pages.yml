@@ -17,7 +17,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.3'
@@ -26,7 +26,7 @@ jobs:
         env:
           JEKYLL_ENV: production
         run: bundle exec ruby scripts/build-site.rb
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: _site
 
@@ -45,6 +45,51 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Verify GitHub Pages publishing mode
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mode="$(gh api "repos/${GITHUB_REPOSITORY}/pages" --jq .build_type)"
+          if [ "$mode" != "workflow" ]; then
+            echo "::error::Set Settings > Pages > Source to GitHub Actions. Branch publishing excludes the resume and can overwrite this deployment."
+            exit 1
+          fi
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
+      - name: Check published website
+        env:
+          SITE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          python - <<'PY'
+          import os
+          import time
+          import urllib.request
+
+          base = os.environ['SITE_URL'].rstrip('/')
+          checks = {
+              '/': b'<!DOCTYPE html>',
+              '/zx-resume/': b'xuziming.syky@sinopec.com',
+              '/zx-resume/css/rockies.css': b'--forest',
+              '/zx-resume/assets/rockies.js': b'IntersectionObserver',
+              '/zx-resume/images/banff-rockies.webp': b'RIFF',
+          }
+          for attempt in range(12):
+              failures = []
+              for path, expected in checks.items():
+                  try:
+                      request = urllib.request.Request(
+                          base + path, headers={'Cache-Control': 'no-cache'})
+                      with urllib.request.urlopen(request, timeout=15) as response:
+                          if response.status != 200 or expected not in response.read():
+                              raise ValueError('unexpected status or content')
+                  except Exception as error:
+                      failures.append(f'{path}: {error}')
+              if not failures:
+                  print('Published homepage, CV, CSS, JavaScript and image verified.')
+                  break
+              if attempt == 11:
+                  raise SystemExit('\n'.join(failures))
+              print('Waiting for Pages propagation: ' + '; '.join(failures))
+              time.sleep(10)
+          PY
