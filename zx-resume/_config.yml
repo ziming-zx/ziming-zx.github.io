@@ -1,0 +1,66 @@
+# Site settings
+title: "Ziming Xu Website Resume"
+description: "A resume built on GitHub Pages sites."
+
+# Build settings
+markdown: kramdown
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Resume settings
+resume_avatar:                  "true"
+resume_name:                    "Ziming Xu"
+resume_title:                   "Ph.D. Candidate in Petroleum Engineering"
+
+# used for the contact button in _layouts/resume.html
+resume_contact_email:           "ziming4@ualberta.ca"
+
+# the next two items are used for schema itemprops in _layouts/resume.html
+resume_contact_telephone:       "888-8888"
+resume_contact_address:         "6-361 Donadeo Innovation Centre for Engineering, 9211 116th Street, Edmonton, Alberta, Canada T6G 1H9"
+
+resume_header_contact_info:     "6-361 DICE, 9211 116th St, Edmonton, AB, CA • ziming4@ualberta.ca"
+display_header_contact_info:    "true"
+
+resume_header_intro: "<p>Hello, my name is Ziming Xu, and I am a fourth-year Ph.D. student at the University of Alberta. My research is dedicated to pioneering advancements in production forecasting and optimization through the application of advanced deep learning and numerical methods. I am deeply passionate about machine learning and its potential to solve critical subsurface problems. My work focuses on pushing the boundaries of knowledge in these areas, aiming to make a significant impact on both the academic and industrial fronts.</p>"
+
+# use "yes" to display the email contact button,
+# "no" to display an "I'm not looking for work" message,
+# or remove the resume_looking_for_work option entirely
+# to leave blank
+resume_translation:        "yes"
+
+# Decide which sections to use
+# comment out to hide
+resume_section_education:       true
+resume_section_experience:      true
+resume_section_projects:        true
+resume_section_activities:      true
+# resume_section_skills:          true
+# resume_section_award:           true
+resume_section_links:           true
+resume_section_associations:    true
+# resume_section_publications:    true
+# resume_section_conferences:     true
+# resume_section_interests:       true
+
+# Resume social links
+# uncomment the options you wish to display, and add your own URL
+resume_social_links:
+  resume_github_url:            "https://github.com/ziming-zx"
+  # resume_twitter_url:           "http://twitter.com/jglovier"
+  # resume_dribbble_url:          "https://dribbble.com/jag"
+  # resume_facebook_url:          "insert Facebook URL here"
+  resume_linkedin_url:          "https://linkedin.com/in/ziming-xu-kimi"
+  # resume_instagram_url:         "insert your Instagram URL here"
+  resume_website_url:           "https://orcid.org/0000-0002-6937-1307"
+  resume_medium_url:            "https://scholar.google.ca/citations?user=AakA-w0AAAAJ&hl=en&oi=sra"
+resume_print_social_links:      true
+
+# Design settings
+resume_theme:                   default
+
+# Note: when editing locally, remember to restart
+# your Jekyll server when you edit this file. Changes
+# to _config.yml are only recognized when the server starts
