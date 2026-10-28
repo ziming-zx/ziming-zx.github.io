@@ -1,0 +1,24 @@
+{
+  "imported_on": "2026-10-28",
+  "method": "git subtree add without --squash; original commits retained",
+  "sources": [
+    {
+      "repository": "https://github.com/ziming-zx/ziming-zx.github.io.git",
+      "branch": "master",
+      "commit": "391f3c6ced769f2e54f3ecabb2ec1b4dd21db263",
+      "directory": "."
+    },
+    {
+      "repository": "https://github.com/ziming-zx/zx-resume.git",
+      "branch": "gh-pages",
+      "commit": "b2b59c0670d78e8f3a563f53f8b02de9473fd18e",
+      "directory": "zx-resume"
+    },
+    {
+      "repository": "https://github.com/ziming-zx/TradingAgents-CN.git",
+      "branch": "main",
+      "commit": "cdd0316f8fd962081aa5a9d81bd1996b9a1758c7",
+      "directory": "projects/TradingAgents-CN"
+    }
+  ]
+}

@@ -1,6 +1,19 @@
 # Site settings
 title: "Ziming Xu Website Resume"
 description: "A resume built on GitHub Pages sites."
+url: "https://ziming-zx.github.io"
+baseurl: "/zx-resume"
+
+# The original template's domain and development files must not be published.
+exclude:
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - Dockerfile
+  - LICENSE
+  - README.md
+  - vendor/
+  - _vendor/
 
 # Build settings
 markdown: kramdown

@@ -11,3 +11,8 @@ ehthumbs.db
 Gemfile.lock
 
 beautiful-jekyll-theme-*.gem
+
+.bundle/
+vendor/
+.jekyll-cache/
+.jekyll-metadata

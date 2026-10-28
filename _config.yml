@@ -285,6 +285,10 @@ defaults:
 
 # Exclude these files from production site
 exclude:
+  - zx-resume/
+  - projects/
+  - scripts/
+  - MERGE-SOURCES.json
   - CHANGELOG.md
   - CNAME
   - Gemfile
