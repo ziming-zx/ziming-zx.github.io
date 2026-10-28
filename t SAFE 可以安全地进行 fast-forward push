@@ -1,0 +1,770 @@
+> [33mca217c5f[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mconsolidate-repositories[m[33m)[m Name consolidated workspace Ziming Space
+> [33m3325b7b1[m Configure unified website build and document repository consolidation
+>   [33m82738052[m Add 'projects/TradingAgents-CN/' from commit 'cdd0316f8fd962081aa5a9d81bd1996b9a1758c7'
+[32m|[m[33m\[m  
+[32m|[m > [33mcdd0316f[m[33m ([m[1;33mtag: [m[1;33mimport/TradingAgents-CN[m[33m)[m chore: update database export config snapshot
+[32m|[m > [33m49bbc7be[m feat: refresh AIHubMix provider setup content
+[32m|[m > [33m604e4ebf[m fix: handle string LLM providers and provider table layout
+[32m|[m > [33mfaec7769[m 微信公众号公告
+[32m|[m > [33mdc470a61[m refactor: 统一配置接口响应格式
+[32m|[m > [33m64a0ca93[m fix: 修复前端类型检查报错
+[32m|[m > [33m19f8e23d[m refactor: 统一前端接口响应处理并修复类型问题
+[32m|[m > [33m54e406a5[m chore: 更新安装导出配置快照日期
+[32m|[m > [33md7f3b4da[m docs: 更新 README 安装部署方式说明
+[32m|[m > [33mc0cdffab[m docs: 更新 v1.0.1 界面版本号并补充 AIHubmix 展示
+[32m|[m > [33m8c35cb21[m chore: 对齐 v1.0.1 Docker 发布配置
+[32m|[m > [33m6cf2c34b[m docs: 完善 v1.0.1 发布说明与使用手册
+[32m|[m > [33m66c00297[m fix: 完善模型排序并增强股票同步兜底能力
+[32m|[m > [33mf2472f8a[m feat: 调整大模型展示顺序并将最新模型置顶
+[32m|[m > [33mce150ef9[m feat: 优化厂家配置流程并修复前端页面切换问题
+[32m|[m > [33mdf40b8bc[m chore: update remaining config and docs changes
+[32m|[m > [33mf2579fef[m feat: add aihubmix provider integration
+[32m|[m > [33m5ae3811d[m 完善：统一图中provider分支判断并补充人工上游吸收清单
+[32m|[m > [33m12e27da5[m 完善：退役自动上游同步脚本并改为人工选择性同步文档
+[32m|[m > [33m1d50e6cc[m 完善：收敛上游LLM初始化路径并增强MongoDB迁移脚本
+[32m|[m > [33m13783b69[m 完善：增强MongoDB迁移脚本并补充数据库运维入口
+[32m|[m > [33mf468f562[m 完善：增加开发环境共享库保护并补充数据库运维文档
+[32m|[m > [33m0ea29b6f[m 完善：统一数据库中的provider规范键并补充aliases支持
+[32m|[m > [33mc73bafdb[m 完善：数据库隔离可观测性与迁移脚本，补充命名策略回归测试
+[32m|[m > [33me8e2ac9d[m 完善：数据库按大版本/实例隔离命名，默认库名调整为tradingagentscn
+[32m|[m > [33m8e78c212[m 完善：后端链路统一provider规范键（qwen/glm）并补充回归测试
+[32m|[m > [33m3099f3cb[m 完善：统一provider归一化与默认URL/环境变量映射，补充gitattributes行尾规则
+[32m|[m > [33mb1ca7b11[m 完善：补齐langchain-core依赖并统一provider命名兼容
+[32m|[m > [33m3d7c6b8f[m 完善：修复风控基本面引用、优化LLM工厂别名与图层参数透传、解耦标的约束
+[32m|[m > [33m827a4b78[m Sync upstream: LLM clients, CLI model catalog, ticker context
+[32m|[m > [33mbd599607[m 去掉没有引用的包
+[32m|[m > [33ma6e165cd[m docs: 添加版权声明和侵权警告
+[32m|[m >   [33mf0d3b8cb[m Merge branch 'v1.0.0-preview'
+[32m|[m [34m|[m[35m\[m  
+[32m|[m [34m|[m > [33m9d3a1a4d[m fix: 修正 AKShareProvider 导入路径
+[32m|[m [34m|[m > [33m24282f96[m refactor: 系统性解决事件循环冲突问题
+[32m|[m [34m|[m > [33m03a9bc2e[m fix: 修复统一新闻工具的事件循环冲突问题
+[32m|[m [34m|[m > [33m3aa9a78f[m feat: 优化统一新闻工具，添加自动同步功能
+[32m|[m [34m|[m > [33m9a5e8ee1[m fix: 修复新闻查询和时间显示问题
+[32m|[m [34m|[m > [33mdf0fd900[m 优化docker环境下获取新闻的办法
+[32m|[m [34m|[m > [33mf91c9f23[m chore: 添加curl-cffi到pyproject.toml依赖列表
+[32m|[m [34m|[m > [33m6fe2347e[m fix: Docker环境新闻同步问题 - 使用curl_cffi绕过反爬虫检测
+[32m|[m [34m|[m > [33m4a4b1ccc[m 测试验证
+[32m|[m [34m|[m > [33m47e86349[m fix: 修复Docker环境下AKShare新闻接口反爬虫问题
+[32m|[m [34m|[m > [33mac902f7c[m fix: 修复新闻同步任务中 datetime 未导入的错误
+[32m|[m [34m|[m > [33md41e2798[m feat: 优化新闻同步策略，只同步自选股并支持实时获取
+[32m|[m [34m|[m > [33m6242966b[m fix: 修复Docker环境下AKShare新闻接口反爬虫问题
+[32m|[m [34m|[m > [33m92b3b107[m chore: 移除已废弃的 build_all.ps1（已迁移到 build/build_installer.ps1）
+[32m|[m [34m|[m > [33maf76f002[m chore: 升级 AKShare 到 1.17.86 修复新闻接口错误
+[32m|[m [34m|[m > [33m683a808d[m fix: 修复开始菜单启动命令，先cd到安装目录再执行脚本
+[32m|[m [34m|[m > [33m1569abc4[m Revert "增加导入"
+[32m|[m [34m|[m > [33m7ec7b641[m 增加导入
+[32m|[m [34m|[m > [33mebd39d24[m 修改安装程序，不需要检查端口占用
+[32m|[m [34m|[m > [33mf18eb0d2[m fix: 修复AKShare新闻同步问题并合并PR #470
+[32m|[m > [35m|[m [33m9313d419[m docs: 添加测试志愿者招募公告
+[32m|[m > [35m|[m [33m8fe92a72[m Merge branch 'v1.0.0-preview' into main
+[32m|[m [36m|[m[35m\[m[35m|[m 
+[32m|[m [36m|[m > [33me03c87d3[m fix: 修复 Nginx 配置更新问题
+[32m|[m [36m|[m > [33m93d8c85e[m feat: 优化 Windows 安装程序
+[32m|[m [36m|[m > [33m132e1232[m fix: 修复 Windows 安装程序脚本的字符编码问题
+[32m|[m [36m|[m > [33m54ac993e[m feat: 添加 Windows 安装程序构建和测试脚本
+[32m|[m [36m|[m > [33m26600a32[m feat: 优化 Windows 安装程序
+[32m|[m > [1;31m|[m [33m50eef004[m 修改新群号，增加视频链接
+[32m|[m > [1;31m|[m [33m0dc34a49[m Merge branch 'v1.0.0-preview'
+[32m|[m [1;32m|[m[1;31m\[m[1;31m|[m 
+[32m|[m [1;32m|[m > [33m35e7846f[m fix: 修复新闻分析师预处理模式下的提示词问题 (v1.0.0-preview)
+[32m|[m > [1;33m|[m [33mdefb02d7[m docs: 完成提示词模板系统v1.0.1设计 - 补充模板来源关系、配额与限制
+[32m|[m > [1;33m|[m [33mb808f14a[m 修改学习中心的常见问题，添加价格提醒未实现的说明
+[32m|[m > [1;33m|[m [33m318fd097[m Merge branch 'v1.0.0-preview'
+[32m|[m [1;34m|[m[1;33m\[m[1;33m|[m 
+[32m|[m [1;34m|[m > [33m2387f5a8[m docs(blog): add thanks to PR contributors (PR #457, BG8CFB)
+[32m|[m > [1;35m|[m [33md7772026[m docs: emphasize Learning Center and compliance positioning in README
+[32m|[m > [1;35m|[m [33m147addd0[m Merge branch 'v1.0.0-preview'
+[32m|[m [1;36m|[m[1;35m\[m[1;35m|[m 
+[32m|[m [1;36m|[m > [33m307927de[m backend(paper): auto-migrate legacy scalar cash/realized_pnl on read\n\n- Ensure buy/sell updates to cash.<currency> work for old records\n- Add migration script to batch-fix paper_accounts structure\n\nContext: fix Mongo error 'Cannot create field CNY in element {cash: ...}'
+[32m|[m [1;36m|[m > [33m8e95ac01[m frontend(build): fix Docker build failure by including docs and assets\n\n- Copy docs to /app/docs for Vite ?raw Markdown imports\n- Copy root assets to frontend/public/assets for /assets/* paths\n- Update .dockerignore to whitelist docs/learning and docs/paper\n\nContext: resolves Rollup error for '../../../../docs/...?.raw' in Article.vue during 'yarn vite build' inside Docker
+[32m|[m [1;36m|[m > [33m05be2fcf[m chore(frontend): 版本更新至 1.0.0-preview；修正文章图片路径映射为 /assets/*，移除跨根目录 new URL 警告
+[32m|[m [1;36m|[m >   [33m1715073a[m Merge branch 'main' into v1.0.0-preview
+[32m|[m [1;36m|[m [32m|[m[1;36m\[m  
+[32m|[m [1;36m|[m [32m|[m[1;36m/[m  
+[32m|[m [1;36m|[m[1;36m/[m[32m|[m   
+[32m|[m > [32m|[m [33m43b973e7[m docs(CONTRIBUTORS): 增加贡献者 BG8CFB（PR #457 修复 GLM 新闻分析）
+[32m|[m > [32m|[m [33m61c2c809[m Merge branch 'v1.0.0-preview'
+[32m|[m [34m|[m[32m\[m[32m|[m 
+[32m|[m [34m|[m > [33m6e0e1906[m feat(frontend): 移除批量分析页市场类型字段，统一自动识别市场并简化提交参数（仅在全同市场时携带 market_type）
+[32m|[m [34m|[m >   [33m36ff36cb[m Merge PR #457: GLM news analyst fixes and OpenAI-compatible adapters
+[32m|[m [34m|[m [36m|[m[1;31m\[m  
+[32m|[m [34m|[m [36m|[m >   [33m8be3a42e[m Merge branch 'main' of github.com:BG8CFB/TradingAgents-CN
+[32m|[m [34m|[m [36m|[m [1;32m|[m[1;33m\[m  
+[32m|[m [34m|[m [36m|[m > [1;33m|[m [33m4a4ea383[m 修复GLM模型无法调用新闻分析的问题
+[32m|[m [34m|[m > [1;33m|[m [1;33m|[m [33m6151fbd7[m feat(learning): 提交学习中心文档与前端页面更新\n\n- 文档：Prompt 工程、模型对比、资源导览修订\n- 前端：Learning 文章/分类/索引页更新，路由调整，暗色主题细节优化\n- 静态：新增 assets/ 与 paper/ 公共资源\n- 清理：删除过期教程 getting-started.md
+[32m|[m [34m|[m > [1;33m|[m [1;33m|[m [33mb7d89a16[m docs(faq): 聚焦 DeepSeek 与 Qwen 系列；修正多智能体辩论 15 级轮次；扩展适用场景；更新 API 密钥获取（DeepSeek/DashScope）；替换 GPT 示例与费用为 DeepSeek/Qwen；修复港股/美股当前支持说明
+[32m|[m [34m|[m > [1;33m|[m [1;33m|[m [33m72a8ccbb[m refactor: 重命名finrobot-intro.md为tradingagents-intro.md
+[32m|[m [34m|[m > [1;33m|[m [1;33m|[m [33m0bc04012[m fix: 更新所有学习文档中的FinRobot引用为TradingAgents
+[32m|[m [34m|[m > [1;33m|[m [1;33m|[m [33m640eca7c[m fix: 更新论文解读文章标题为TradingAgents
+[32m|[m [34m|[m > [1;33m|[m [1;33m|[m [33m8dcda000[m fix: 更正源项目信息，从FinRobot改为TradingAgents
+[32m|[m [34m|[m > [1;33m|[m [1;33m|[m [33m2ea6ebac[m fix: 更新学习中心前端页面，显示实际已完成的文档
+[32m|[m [34m|[m > [1;33m|[m [1;33m|[m [33m7686caf7[m feat: 完成学习中心核心文档编写
+[32m|[m [34m|[m > [1;33m|[m [1;33m|[m [33m08b64826[m feat: 添加学习中心模块
+[32m|[m [34m|[m > [1;33m|[m [1;33m|[m [33mc465a66e[m 修改软件名称，改为学习平台。
+[32m|[m [34m|[m > [1;33m|[m [1;33m|[m   [33m12b85c9e[m merge: 合并 main 分支最新代码到 v1.0.0-preview
+[32m|[m [34m|[m [1;34m|[m[34m\[m [1;33m\[m [1;33m\[m  
+[32m|[m [34m|[m [1;34m|[m[34m/[m [1;33m/[m [1;33m/[m  
+[32m|[m [34m|[m[34m/[m[1;34m|[m [1;33m|[m [1;33m|[m   
+[32m|[m > [1;34m|[m [1;33m|[m [1;33m|[m [33mba07402d[m 修改口号标题，避免用户误会
+[32m|[m > [1;34m|[m [1;33m|[m [1;33m|[m [33m3da6b0f0[m 修改新绿色版安装指南链接
+[32m|[m > [1;34m|[m [1;33m|[m [1;33m|[m   [33m33383494[m Merge branch 'v1.0.0-preview'
+[32m|[m [1;36m|[m[31m\[m [1;34m\[m [1;33m\[m [1;33m\[m  
+[32m|[m > [31m|[m [1;34m|[m [1;33m|[m [1;33m|[m [33m71c63679[m 修复报告详情页没法下单的问题
+[32m|[m [1;33m|[m [31m|[m[1;33m_[m[1;34m|[m[1;33m_[m[1;33m|[m[1;33m/[m  
+[32m|[m [1;33m|[m[1;33m/[m[31m|[m [1;34m|[m [1;33m|[m   
+[32m|[m [1;33m|[m [31m|[m > [1;33m|[m [33m1ad460ca[m 修复报告详情页没法下单的问题
+[32m|[m [1;33m|[m [31m|[m > [1;33m|[m [33m3a225001[m 博客更新
+[32m|[m [1;33m|[m [31m|[m > [1;33m|[m [33m073fd829[m fix: 修复新闻同步API限流导致的'失败雪崩'问题
+[32m|[m [1;33m|[m [31m|[m[31m/[m [1;33m/[m  
+[32m|[m [1;33m|[m > [1;33m|[m [33m02a92b29[m fix: 修复database_service缺少logger导入的问题
+[32m|[m [1;33m|[m > [1;33m|[m [33mc7824853[m 优化股票筛选视图
+[32m|[m [1;33m|[m > [1;33m|[m [33ma9e1c961[m feat: 应用启动时自动创建股票筛选视图和索引
+[32m|[m [1;33m|[m > [1;33m|[m [33m840c85e0[m feat: AKShare单股同步失败时自动回退到Tushare全量同步
+[32m|[m [1;33m|[m > [1;33m|[m [33m2c7d75cd[m fix: 修正股票详情页成交量显示单位和时间格式
+[32m|[m [1;33m|[m > [1;33m|[m [33m8f6ddb36[m fix: 修正前端成交额筛选级别设置
+[32m|[m [1;33m|[m > [1;33m|[m [33me40dab12[m fix: 修复筛选字段类型和成交额单位问题
+[32m|[m [1;33m|[m > [1;33m|[m [33m8f39457c[m fix: Tushare实时行情同步缺少trade_date字段
+[32m|[m [1;33m|[m[1;33m/[m [1;33m/[m  
+[32m|[m > [1;33m|[m [33mc9b3ad1d[m 增加视频教程说明
+[32m|[m > [1;33m|[m [33m527c19fb[m 修改前端的启动过程
+[32m|[m > [1;33m|[m [33m839cb649[m 目录错误
+[32m|[m > [1;33m|[m [33md929c814[m 修改代码部署版本
+[32m|[m > [1;33m|[m [33md99e3322[m 修改mongodb连接本地服务
+[32m|[m > [1;33m|[m [33m8bca0b8e[m fix: 修复 MongoDB 连接未关闭的资源警告
+[32m|[m > [1;33m|[m   [33md0ecc536[m Merge branch 'v1.0.0-preview'
+[32m|[m [1;33m|[m[33m\[m [1;33m\[m  
+[32m|[m [1;33m|[m [33m|[m[1;33m/[m  
+[32m|[m [1;33m|[m[1;33m/[m[33m|[m   
+[32m|[m [1;33m|[m > [33me7286a4a[m 修复部分提示错误
+[32m|[m [1;33m|[m > [33m71811383[m feat: 数据库导出添加自选股集合
+[32m|[m [1;33m|[m > [33mfc17c0ec[m fix: 修复循环导入导致的 pymongo 检测失败问题
+[32m|[m [1;33m|[m > [33ma8f931e7[m 修改示例配置
+[32m|[m [1;33m|[m > [33me5323a32[m feat: 添加详细的Token使用记录保存日志
+[32m|[m [1;33m|[m > [33m71ba5f52[m 12日工作日志
+[32m|[m [1;33m|[m > [33m9316d4b7[m fix: 添加完整的异步数据准备方法链
+[32m|[m [1;33m|[m > [33m048b576f[m fix: 修复A股数据同步的事件循环冲突问题（正确方案）
+[32m|[m [1;33m|[m > [33m27488d69[m fix: 修复A股分析时数据同步的事件循环冲突问题
+[32m|[m [1;33m|[m > [33m8543cabd[m feat: 优化港股数据获取，添加财务指标和缓存机制
+[32m|[m [1;33m|[m > [33md5226589[m fix: 港股和美股详情页隐藏'同步数据'按钮
+[32m|[m [1;33m|[m > [33mf8ef8b84[m feat: 支持1-5位数字的港股代码识别
+[32m|[m [1;33m|[m > [33mce071cd7[m 完善请求去重机制，修复并发请求问题
+[32m|[m [1;33m|[m > [33m395f83d7[m 修复同步阻塞调用导致事件循环卡死的问题
+[32m|[m [1;33m|[m > [33me40183f7[m 修复港股行情数据获取问题
+[32m|[m [1;33m|[m > [33m6ac64a05[m 实现港股数据源优先级支持（参考美股模式）
+[32m|[m [1;33m|[m > [33mba002c06[m 修复模拟交易多市场功能的价格获取和前端过滤
+[32m|[m [1;33m|[m > [33m6c81a91d[m 修复模拟交易多市场支持的问题
+[32m|[m [1;33m|[m > [33mb6f7d3eb[m 修复 UnboundLocalError: 删除重复的 get_mongo_db 导入
+[32m|[m [1;33m|[m > [33mebffa66a[m 前端UI增强：支持多市场模拟交易显示
+[32m|[m [1;33m|[m > [33m6fa2424c[m 实现模拟交易多市场支持（A股/港股/美股）
+[32m|[m [1;33m|[m > [33m126e7b93[m 实现港股和美股支持功能
+[32m|[m [1;33m|[m > [33m4832288a[m 自选股优化
+[32m|[m [1;33m|[m > [33m2385be00[m 完善A股数据准备功能：自动检查和同步数据
+[32m|[m > [33m|[m [33m3832e410[m 更新日志
+[32m|[m > [33m|[m [33mb4cf4059[m Merge branch 'v1.0.0-preview' into main
+[32m|[m [34m|[m[33m\[m[33m|[m 
+[32m|[m [34m|[m > [33m582a6979[m fix: 导入数据时自动转换日期字段格式
+[32m|[m [34m|[m > [33m8d2c6f07[m fix: 修复数据库导入功能 - 参数传递方式
+[32m|[m [34m|[m > [33m359cb49d[m fix: 修复缓存查找逻辑 - 按数据库配置的优先级查找缓存
+[32m|[m [34m|[m > [33m3c9f360a[m fix: 添加 IntegratedCacheManager 缺失的方法
+[32m|[m [34m|[m > [33m048fcb7f[m feat: 默认启用集成缓存策略（MongoDB/Redis）
+[32m|[m [34m|[m > [33m8cc45105[m fix: 修复美股数据源优先级映射 - 字符串键替代枚举键
+[32m|[m [34m|[m > [33m246303b5[m fix: 修复数据源配置读取 - 集合名错误和激活状态检查
+[32m|[m [34m|[m > [33m58c7aaef[m fix: A股数据源也从数据库配置读取 API Key + 架构重构文档
+[32m|[m [34m|[m > [33m6355d2a3[m fix: 从数据库配置读取数据源 API Key
+[32m|[m [34m|[m > [33m85aefd9e[m feat: 添加数据源配置时自动创建市场分类关系
+[32m|[m [34m|[m > [33m7e12986f[m fix: 修复美股数据源优先级问题，从数据库读取配置
+[32m|[m [34m|[m > [33mb1c3784f[m refactor: 优化数据库管理页面布局
+[32m|[m [34m|[m > [33m7e659932[m feat: 添加数据导入功能
+[32m|[m [34m|[m > [33m552a06e3[m fix: 优化数据导出选项和脱敏逻辑
+[32m|[m [34m|[m > [33md97cf0dd[m refactor: 移除 Web 界面备份功能，优化数据导出
+[32m|[m [34m|[m > [33m9e3635e0[m fix: 修复数据库导出接口阻塞问题
+[32m|[m [34m|[m > [33m868d445a[m feat: 数据源配置列表添加测试按钮
+[32m|[m [34m|[m > [33mc167039f[m fix: Alpha Vantage 测试接口从数据库读取 API Key
+[32m|[m [34m|[m > [33m578dd5f4[m feat: Alpha Vantage 从数据库读取 API Key
+[32m|[m [34m|[m > [33mcb2d991d[m refactor: 统一美股数据源管理到 data_source_manager.py
+[32m|[m [34m|[m > [33m33e554de[m feat: 实现美股数据源管理器和配置机制
+[32m|[m [34m|[m > [33mec79cf1f[m feat: 为美股添加 yfinance 和 Alpha Vantage 数据源支持
+[32m|[m [34m|[m[34m/[m  
+[32m|[m > [33m706f0120[m fix: 修复基本面分析师硬编码日期问题 - 改为动态计算10天数据范围
+[32m|[m > [33mcd322eea[m 删掉两个过期文件
+[32m|[m > [33m0747547a[m docs: 添加股票数据同步重要提醒
+[32m|[m > [33me72ea14a[m 清理过期的文件
+[32m|[m >   [33m16dc57d8[m chore: 保留本地版本，清理合并冲突
+[32m|[m [36m|[m[1;31m\[m  
+[32m|[m [36m|[m > [33m778bd5a1[m 增加部分说明
+[32m|[m [36m|[m > [33m7e7b617d[m 增加合并时间说明
+[32m|[m [36m|[m > [33ma5d161cf[m docs: 更新README.md为v1.0.0-preview版本
+[32m|[m [36m|[m > [33ma6fddb65[m chore: 更新.gitignore以支持v1.0.0-preview架构
+[32m|[m [36m|[m > [33m4e6d474a[m chore: 添加 data_backup_* 目录到 .gitignore
+[32m|[m [36m|[m > [33mefc25065[m chore: 清理 upstream_contribution 目录
+[32m|[m [36m|[m > [33mf596263f[m fix: 修复锁定版本安装问题，添加 --no-deps 参数
+[32m|[m [36m|[m > [33mdd4af323[m feat: 添加锁定版本依赖文件，大幅提升安装速度
+[32m|[m [36m|[m > [33m253a7e5b[m docs: 添加 PyYAML Windows 编译错误解决方案
+[32m|[m [36m|[m > [33mc4494d9c[m fix: 移除间接依赖，加速 pip 依赖解析
+[32m|[m [36m|[m > [33m94ba6fe7[m docs: 添加国内镜像加速安装说明
+[32m|[m [36m|[m > [33mce93f7f5[m docs: 添加 2025-10-21 修复工作总结文档
+[32m|[m [36m|[m > [33me35a0193[m fix: 同步更新 requirements.txt 与 pyproject.toml 保持一致
+[32m|[m [36m|[m > [33mddd20cb9[m fix: 补充 pyproject.toml 中缺失的 14 个依赖包
+[32m|[m [36m|[m > [33m8819c770[m 调整git范围
+[32m|[m [36m|[m > [33md938eaaa[m docs: 在 README 中添加 v1.0.0-preview 使用指南链接
+[32m|[m [36m|[m > [33m8efb2157[m docs: 在 README 中添加 v1.0.0-preview 内测版本介绍
+[32m|[m [36m|[m > [33m5c136396[m 添加微信公众号
+[32m|[m [36m|[m > [33mca30c796[m 更改https://tushare.pro/register?reg=tacn
+[32m|[m [36m|[m > [33m3f077fb6[m 添加项目微信公众号
+[32m|[m [36m|[m > [33me0fca27d[m 去掉项目微信号，微信号被腾讯封了
+[32m|[m [36m|[m > [33me3b2865e[m 将qwen3-max替换掉qwen-max（qwen-max太老旧了）
+[32m|[m [36m|[m > [33m8b4e2830[m 完成TDX数据源移除和统一数据接口迁移
+[32m|[m [36m|[m > [33m6d3fa163[m 增加新的QQ群和微信号
+[32m|[m [36m|[m > [33mf99c9796[m refactor: 简化登录页面提示，仅在输入框占位符显示默认账号
+[32m|[m [36m|[m > [33m09440916[m feat: 优化登录页面默认账号提示显示
+[32m|[m [36m|[m > [33m658d5fc9[m feat: 在登录页面添加默认账号密码提示
+[32m|[m [36m|[m > [33m99da61da[m 用户登陆session容易退出问题。
+[32m|[m [36m|[m > [33m71b59e4d[m 部分内容先不提交
+[32m|[m [36m|[m > [33mfc890730[m 对说明做部分调整
+[32m|[m [36m|[m > [33mb7efefda[m  发布 TradingAgents-CN v0.1.15 正式版
+[32m|[m [36m|[m >   [33m4ceae686[m Merge branch 'v0.1.15-preview'
+[32m|[m [36m|[m [1;32m|[m[1;33m\[m  
+[32m|[m [36m|[m > [1;33m|[m [33m495d79f6[m  发布 TradingAgents-CN v0.1.14 正式版
+[32m|[m > [1;33m|[m [1;33m|[m [33m65802ec3[m docs: 更新安装文档和项目结构整理
+[32m|[m > [1;33m|[m [1;33m|[m [33m9545cdf4[m docs: 新增统一安装指南 - 整合三种部署方式
+[32m|[m > [1;33m|[m [1;33m|[m [33mbbcffa0e[m fix: 修复使用统计与计费无数据问题 - 添加缺失的currency字段
+[32m|[m > [1;33m|[m [1;33m|[m [33md81f7001[m fix: 修复使用统计与计费无数据问题 - 添加缺失的currency字段
+[32m|[m > [1;33m|[m [1;33m|[m [33m54da785c[m docs: 完善v1.0.0-preview核心功能模块说明
+[32m|[m > [1;33m|[m [1;33m|[m [33mb92991de[m docs: 完善v1.0.0-preview核心功能模块说明
+[32m|[m > [1;33m|[m [1;33m|[m [33m97c13940[m docs: 更新v1.0.0-preview发布说明 - 添加最新更新内容
+[32m|[m > [1;33m|[m [1;33m|[m [33mb5b6e736[m 数据同步
+[32m|[m > [1;33m|[m [1;33m|[m   [33md4c45345[m Merge branch 'feature/multi-market-support' into v1.0.0-preview
+[32m|[m [1;34m|[m[1;35m\[m [1;33m\[m [1;33m\[m  
+[32m|[m [1;34m|[m > [1;33m|[m [1;33m|[m [33m874c0677[m fix: 修复毛利率字段错误 - 使用grossprofit_margin而不是gross_margin
+[32m|[m [1;34m|[m > [1;33m|[m [1;33m|[m [33m9bbf51d0[m fix: 修复亏损股判断条件 - pe_ttm为None时也应识别为亏损股
+[32m|[m [1;34m|[m > [1;33m|[m [1;33m|[m [33mb0e9af63[m feat: 基本面分析师日志打印完整内容 - 移除500字符截断限制
+[32m|[m [1;34m|[m > [1;33m|[m [1;33m|[m [33md76f57d6[m fix: 修复亏损股判断逻辑 - 处理realtime_metrics返回字典但PE为None的情况
+[32m|[m [1;34m|[m > [1;33m|[m [1;33m|[m [33md9f8dc10[m fix: 修复亏损股PE计算逻辑 - 防止使用历史净利润数据
+[32m|[m [1;34m|[m > [1;33m|[m [1;33m|[m [33mdb934b95[m feat: 港股数据添加财务指标（PE、PB、ROE等）+ fix: 修复亏损股PE显示问题
+[32m|[m [1;34m|[m > [1;33m|[m [1;33m|[m [33m8e5d0378[m refactor: 统一基本面分析数据获取策略，所有级别都获取完整数据
+[32m|[m [1;34m|[m > [1;33m|[m [1;33m|[m [33me493f6f7[m fix: 港股基本面分析添加当前价格数据
+[32m|[m [1;34m|[m > [1;33m|[m [1;33m|[m [33md4685034[m feat: 统一RSI计算，支持国际标准和中国风格
+[32m|[m [1;34m|[m > [1;33m|[m [1;33m|[m [33mf4ffe7ef[m docs: 添加循环调用问题分析和修复文档
+[32m|[m [1;34m|[m > [1;33m|[m [1;33m|[m [33m427c67c2[m fix: 修复get_stock_info死循环问题
+[32m|[m [1;34m|[m > [1;33m|[m [1;33m|[m [33mf21a936c[m refactor: 统一技术指标计算，使用共享的indicators库
+[32m|[m [1;34m|[m > [1;33m|[m [1;33m|[m [33mc75d6f78[m fix: 港股数据添加技术指标计算
+[32m|[m [1;34m|[m > [1;33m|[m [1;33m|[m [33mb1ae5018[m docs: 优化工具描述和提示词，明确告知LLM日期范围会自动扩展
+[32m|[m [1;34m|[m > [1;33m|[m [1;33m|[m [33mfe242546[m fix: 港股和美股数据未使用MARKET_ANALYST_LOOKBACK_DAYS配置的问题
+[32m|[m [1;34m|[m > [1;33m|[m [1;33m|[m [33mf660e041[m fix: 修复港股历史数据报告中缺少昨收、涨跌额、涨跌幅字段的问题
+[32m|[m [1;34m|[m > [1;33m|[m [1;33m|[m [33m7157a744[m debug: 添加市场分析和基本面分析工具的详细调试日志
+[32m|[m [1;34m|[m > [1;33m|[m [1;33m|[m [33m6c6a8cc4[m fix: 修复港股历史数据昨收字段错误的问题
+[32m|[m [1;34m|[m > [1;33m|[m [1;33m|[m [33mbb8f8cc7[m fix: 恢复被误删的兼容层文件内容
+[32m|[m [1;34m|[m > [1;33m|[m [1;33m|[m [33me50028c2[m 删掉一些旧的提示语
+[32m|[m [1;34m|[m > [1;33m|[m [1;33m|[m [33m5974b421[m fix: 修复所有核心代码的导入错误
+[32m|[m [1;34m|[m > [1;33m|[m [1;33m|[m [33m44087920[m fix: 删除TokenTrackerCompat中无效的数据库保存代码
+[32m|[m [1;34m|[m > [1;33m|[m [1;33m|[m [33mab3f3b2f[m fix: 修复核心代码中的语法错误和死代码
+[32m|[m [1;34m|[m > [1;33m|[m [1;33m|[m [33m748462c0[m fix: 修复所有文件中的港股工具导入路径错误
+[32m|[m [1;34m|[m > [1;33m|[m [1;33m|[m [33m8f8c5956[m fix: 修复webapi日志重复打印的问题
+[32m|[m [1;34m|[m > [1;33m|[m [1;33m|[m [33m513d1c9b[m fix: 修复港股历史数据仍使用Yahoo Finance的问题
+[32m|[m [1;34m|[m > [1;33m|[m [1;33m|[m [33m6bf53fe9[m feat: 港股数据源从东方财富改为新浪财经
+[32m|[m [1;34m|[m > [1;33m|[m [1;33m|[m [33m9555cfe1[m fix: 修复港股/美股数据源配置读取的市场标识匹配问题
+[32m|[m [1;34m|[m > [1;33m|[m [1;33m|[m [33mea4085fd[m feat: 港股/美股数据源根据用户配置动态选择
+[32m|[m [1;34m|[m > [1;33m|[m [1;33m|[m [33ma035bc5a[m fix: 股票筛选页面移除港股和美股选项
+[32m|[m [1;34m|[m > [1;33m|[m [1;33m|[m [33mcdef7e21[m refactor: 港股/美股改为按需获取+缓存模式
+[32m|[m [1;34m|[m > [1;33m|[m [1;33m|[m [33mdd0ba50a[m feat: 优化港股同步服务，使用AKShare批量同步
+[32m|[m [1;34m|[m > [1;33m|[m [1;33m|[m [33m30713756[m feat: 实现港股和美股批量同步功能
+[32m|[m [1;34m|[m > [1;33m|[m [1;33m|[m [33mf130d77b[m feat: 实现多市场多数据源基础架构 (Phase 0)
+[32m|[m > [1;35m|[m [1;33m|[m [1;33m|[m [33m91e1ab31[m 下载说明
+[32m|[m > [1;35m|[m [1;33m|[m [1;33m|[m [33med09dd1b[m fix: 修复个股基础数据同步和股票筛选性能问题
+[32m|[m > [1;35m|[m [1;33m|[m [1;33m|[m [33m2f2d699a[m fix: 修复分析结果显示和PE计算问题
+[32m|[m [1;35m|[m[1;35m/[m [1;33m/[m [1;33m/[m  
+[32m|[m > [1;33m|[m [1;33m|[m [33m285680f3[m 博客更新
+[32m|[m > [1;33m|[m [1;33m|[m [33mf23ee701[m 优化
+[32m|[m > [1;33m|[m [1;33m|[m [33mb0f1d0f6[m 修改readme增加新版的说明。
+[32m|[m > [1;33m|[m [1;33m|[m [33m79603cb0[m 修改文档
+[32m|[m > [1;33m|[m [1;33m|[m [33m8ec3b5c2[m 更新readme.md
+[32m|[m > [1;33m|[m [1;33m|[m [33m8bdd2393[m refactor: 简化 Docker 配置，统一本地开发和部署文件
+[32m|[m > [1;33m|[m [1;33m|[m [33mc2663ee2[m chore: organize start and stop scripts into scripts/startup and scripts/shutdown
+[32m|[m > [1;33m|[m [1;33m|[m [33m631e269d[m chore: archive unused container_quick_init.py script
+[32m|[m > [1;33m|[m [1;33m|[m [33m9c145d52[m chore: consolidate all test-related files into the tests directory
+[32m|[m > [1;33m|[m [1;33m|[m [33m0f4d2c8b[m chore: relocate debug test scripts to scripts/validation for hygiene and consistency
+[32m|[m > [1;33m|[m [1;33m|[m [33m22b7fd98[m chore: clean project root by moving tests to tests/, archiving temp_original_build.ps1 to scripts/deployment, and relocating pip_freeze_local.txt to reports/
+[32m|[m > [1;33m|[m [1;33m|[m [33m16a523b8[m feat: auto-fill stock name when adding to favorites
+[32m|[m > [1;33m|[m [1;33m|[m [33m0a73107a[m feat: update TypeScript interfaces for basic data sync
+[32m|[m > [1;33m|[m [1;33m|[m [33mdefd2938[m feat: add basic data sync support to stock sync API
+[32m|[m > [1;33m|[m [1;33m|[m [33m6d2bc292[m feat: add basic data sync option to stock detail and favorites pages
+[32m|[m > [1;33m|[m [1;33m|[m [33m215f8ede[m debug: add detailed MongoDB query diagnostics for PE/PB calculation
+[32m|[m > [1;33m|[m [1;33m|[m [33m8e521de3[m feat: add detailed LLM initialization logging for debugging
+[32m|[m > [1;33m|[m [1;33m|[m [33mcd32005b[m Revert "fix: filter ToolMessage for DashScope API compatibility (error code 20015)"
+[32m|[m > [1;33m|[m [1;33m|[m [33m012f14f3[m fix: filter ToolMessage for DashScope API compatibility (error code 20015)
+[32m|[m > [1;33m|[m [1;33m|[m [33m9ca0b78a[m fix: 修复两个重要bug
+[32m|[m > [1;33m|[m [1;33m|[m [33m170bc7d8[m debug: 添加 MongoDB 缓存配置诊断日志
+[32m|[m > [1;33m|[m [1;33m|[m [33m0c0838bc[m fix: 添加缺失的 get_china_stock_info_tushare 函数
+[32m|[m > [1;33m|[m [1;33m|[m [33mdcc00a78[m fix: 修复大模型配置参数未生效的问题 - 从 MongoDB 读取配置而不是 JSON 文件
+[32m|[m > [1;33m|[m [1;33m|[m [33mf7e00ac0[m 前端展示修改市值百亿改为亿为单位
+[32m|[m > [1;33m|[m [1;33m|[m [33mfe476641[m feat: 为所有数据服务添加自动索引创建功能
+[32m|[m > [1;33m|[m [1;33m|[m [33m49864614[m fix: 修复调度器时间显示问题 - 统一使用 naive datetime 存储本地时间
+[32m|[m > [1;33m|[m [1;33m|[m [33mf714fcca[m feat: 为Tushare长时间任务添加进度监控和退出功能
+[32m|[m > [1;33m|[m [1;33m|[m [33m8c94ad04[m feat: 添加执行记录删除功能和修复is_manual过滤问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m84a2bc2d[m fix: 修复执行历史表格列顺序和执行时长显示问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m707ce221[m feat: 添加任务执行控制功能（终止/标记失败）
+[32m|[m > [1;33m|[m [1;33m|[m [33m30b60d11[m fix: 修复任务执行监控的三个关键问题
+[32m|[m > [1;33m|[m [1;33m|[m [33me6b7b4e8[m fix: 修复任务执行监控的两个关键问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m8de738ea[m feat: 手动触发任务时立即创建执行记录
+[32m|[m > [1;33m|[m [1;33m|[m [33m1edece4c[m feat: 在Tushare财务数据同步任务中集成进度跟踪
+[32m|[m > [1;33m|[m [1;33m|[m [33ma52f55c5[m feat: 添加定时任务执行进度跟踪功能
+[32m|[m > [1;33m|[m [1;33m|[m [33m95b8e7de[m feat: 添加定时任务执行监控前端界面
+[32m|[m > [1;33m|[m [1;33m|[m [33mb60d60e1[m feat: 添加定时任务执行监控功能
+[32m|[m > [1;33m|[m [1;33m|[m [33m09c8d105[m fix: 修复update_progress_sync函数的事件循环冲突
+[32m|[m > [1;33m|[m [1;33m|[m [33m49ecb220[m fix: 修复_resolve_stock_name方法定义位置错误
+[32m|[m > [1;33m|[m [1;33m|[m [33md8f42dff[m fix: 修复用户历史接口进度不更新问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m3b8c1cdc[m fix: 修复SimpleAnalysisService初始化和MongoDB配置问题
+[32m|[m > [1;33m|[m [1;33m|[m [33ma0a7b314[m fix: 改进强制生成报告的提示词逻辑
+[32m|[m > [1;33m|[m [1;33m|[m [33m866fb121[m fix: 修复基本面分析师工具调用逻辑和事件循环冲突
+[32m|[m > [1;33m|[m [1;33m|[m [33med58c57d[m fix: Graph进度回调同时更新内存和MongoDB
+[32m|[m > [1;33m|[m [1;33m|[m [33ma5f2fd90[m fix: 修复分析任务进度在MongoDB中不更新的问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m468c48b3[m feat: 单股分析页面支持多格式报告下载
+[32m|[m > [1;33m|[m [1;33m|[m [33mb61ac05f[m fix: 使用concurrent-log-handler解决Windows日志轮转权限问题
+[32m|[m > [1;33m|[m [1;33m|[m [33ma6746c2f[m fix: 操作日志时间存储为本地时间(UTC+8)，不转换为UTC
+[32m|[m > [1;33m|[m [1;33m|[m   [33m9a673d15[m Merge branch 'v1.0.0-preview' of https://github.com/hsliuping/TradingAgents-CN into v1.0.0-preview
+[32m|[m [1;36m|[m[31m\[m [1;33m\[m [1;33m\[m  
+[32m|[m [1;36m|[m > [1;33m|[m [1;33m|[m [33m050d03bc[m fix: 改用中国式SMA计算RSI，与同花顺一致
+[32m|[m > [31m|[m [1;33m|[m [1;33m|[m [33m0b11498f[m 技术分析的时间调整为365天
+[32m|[m > [31m|[m [1;33m|[m [1;33m|[m [33m9cd5059b[m fix: 改用中国式SMA计算RSI，与同花顺一致
+[32m|[m [31m|[m[31m/[m [1;33m/[m [1;33m/[m  
+[32m|[m > [1;33m|[m [1;33m|[m [33m0bd967dd[m fix: 修复pro_bar调用方式错误
+[32m|[m > [1;33m|[m [1;33m|[m [33mf49d4037[m fix: Tushare改用pro_bar接口获取前复权数据
+[32m|[m > [1;33m|[m [1;33m|[m [33mb2680dd7[m feat: 改用同花顺风格的RSI指标
+[32m|[m > [1;33m|[m [1;33m|[m [33mf9a0e98b[m fix: 修复所有数据源缺少技术指标计算的问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m16afbb20[m feat: 将市场分析回溯天数改为250天并添加配置验证日志
+[32m|[m > [1;33m|[m [1;33m|[m [33m28502e5d[m feat: 添加技术指标详细日志，便于对比验证
+[32m|[m > [1;33m|[m [1;33m|[m [33mca95a14b[m fix: 在AgentState中添加工具调用计数器字段
+[32m|[m > [1;33m|[m [1;33m|[m [33m9d321f3f[m fix: 为所有分析师添加工具调用计数器，防止无限循环
+[32m|[m > [1;33m|[m [1;33m|[m [33m0c04a819[m fix: 修复基本面分析师工具调用计数器缺失问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m81dbfaba[m fix: 修复基本面分析反复调用问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m9b2ee389[m feat: 为港股数据添加完整的技术指标计算
+[32m|[m > [1;33m|[m [1;33m|[m [33m5359507f[m feat: 为A股数据添加完整的技术指标计算
+[32m|[m > [1;33m|[m [1;33m|[m [33m6bfcde0e[m refactor: 简化 PDF 导出，只保留 pdfkit
+[32m|[m > [1;33m|[m [1;33m|[m [33m42a69b3b[m fix: 优化 WeasyPrint PDF 生成的 CSS 样式
+[32m|[m > [1;33m|[m [1;33m|[m [33m5526bc9a[m feat: 完善 PDF 导出功能，支持 Docker 环境
+[32m|[m > [1;33m|[m [1;33m|[m [33mc0f185ed[m fix: 修复历史数据覆盖实时数据的问题，优化自选股同步策略
+[32m|[m > [1;33m|[m [1;33m|[m [33m99b0e6b7[m feat: 增强Tushare历史数据同步错误日志，添加详细堆栈跟踪和参数信息
+[32m|[m > [1;33m|[m [1;33m|[m [33m440ae8f7[m fix: 优化单个股票同步逻辑，避免历史数据覆盖实时行情
+[32m|[m > [1;33m|[m [1;33m|[m [33m25acf24b[m fix: 添加缺失的 trading_time 工具模块
+[32m|[m > [1;33m|[m [1;33m|[m [33mf49ea3df[m feat: 添加停止服务脚本部署工具
+[32m|[m > [1;33m|[m [1;33m|[m [33m97e6e110[m docs: 添加 portable 脚本目录说明文档
+[32m|[m > [1;33m|[m [1;33m|[m [33m12f8d161[m 绿色版修改端口的说明
+[32m|[m > [1;33m|[m [1;33m|[m [33mcb789a3a[m feat: 添加绿色版全部停止服务脚本
+[32m|[m > [1;33m|[m [1;33m|[m [33mc6769962[m feat: 优化单个股票实时行情同步逻辑
+[32m|[m > [1;33m|[m [1;33m|[m [33me6934845[m feat: 增强历史数据同步日志，诊断空数据问题
+[32m|[m > [1;33m|[m [1;33m|[m [33mfe04d994[m fix: 修复前端时间显示多加8小时的问题
+[32m|[m > [1;33m|[m [1;33m|[m [33ma70e540f[m feat: 为成交量和成交额添加日期标签
+[32m|[m > [1;33m|[m [1;33m|[m [33m4c885f0b[m 修复成交量同步问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m21f51e6b[m fix: 修复基本面分析师重复调用工具问题
+[32m|[m > [1;33m|[m [1;33m|[m [33mff40169c[m fix: 修复Tushare成交额单位问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m659fe516[m docs: 添加2025-11-01至11-04工作日志 - Windows安装器与基本面分析增强
+[32m|[m > [1;33m|[m [1;33m|[m [33me67d839c[m 基本面数据说明
+[32m|[m > [1;33m|[m [1;33m|[m [33m564b1d6c[m feat: 在基本面分析中添加总市值数据
+[32m|[m > [1;33m|[m [1;33m|[m [33m39205bc2[m feat: add combined_data logging to fundamentals_analyst.py for better debugging and data visibility
+[32m|[m > [1;33m|[m [1;33m|[m [33me047d576[m feat: 添加端口冲突检测和自动清理功能
+[32m|[m > [1;33m|[m [1;33m|[m [33me0ce2bf0[m 排除一些调试目录
+[32m|[m > [1;33m|[m [1;33m|[m [33m6c841fa0[m feat: 添加 Windows 安装器脚本
+[32m|[m > [1;33m|[m [1;33m|[m [33m11620720[m chore: 更新依赖锁定文件和测试代码
+[32m|[m > [1;33m|[m [1;33m|[m [33m97201de7[m feat: 添加 Windows 绿色版（便携版）打包支持
+[32m|[m > [1;33m|[m [1;33m|[m [33mfcd1b59c[m fix: 前端 API 调用和界面优化
+[32m|[m > [1;33m|[m [1;33m|[m [33mbd842fc3[m fix: 修复数据源优先级和股票筛选功能
+[32m|[m > [1;33m|[m [1;33m|[m [33mb1dde424[m fix: 修复时区标识和数据同步性能问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m3018b044[m fix: 修复 LLM 适配器 API Key 验证和传递问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m928e1088[m chore: 更新 .gitignore 排除构建产物和临时文件
+[32m|[m > [1;33m|[m [1;33m|[m   [33m5dd32c92[m Merge remote-tracking branch 'origin/v1.0.0-preview' into windows-portable-installer
+[32m|[m [32m|[m[33m\[m [1;33m\[m [1;33m\[m  
+[32m|[m [32m|[m > [1;33m|[m [1;33m|[m [33m4e849df4[m 修复某些情况下数据源被禁用了以后的问题。
+[32m|[m [32m|[m > [1;33m|[m [1;33m|[m [33m3ddfb80b[m fix: 修复大模型 API Key 更新后不生效的问题
+[32m|[m [32m|[m > [1;33m|[m [1;33m|[m [33m49d238fe[m feat: 改进错误提示用户友好性
+[32m|[m [32m|[m > [1;33m|[m [1;33m|[m [33m8777623e[m arm镜像修改了配置
+[32m|[m [32m|[m > [1;33m|[m [1;33m|[m [33md67167c1[m 打包优化，支持多平台打包
+[32m|[m [32m|[m > [1;33m|[m [1;33m|[m [33mfed70f45[m 工作博文
+[32m|[m [32m|[m > [1;33m|[m [1;33m|[m [33m22277af3[m fix: 修复全局时区显示问题
+[32m|[m [32m|[m > [1;33m|[m [1;33m|[m [33mc9acf86d[m fix: 修复 QuotesIngestionService 缺少 Tushare 权限检测属性初始化
+[32m|[m > [33m|[m [1;33m|[m [1;33m|[m [33m4a78396b[m Add runtime/ to .gitignore to exclude runtime data and configurations from version control
+[32m|[m > [33m|[m [1;33m|[m [1;33m|[m [33m860879c0[m Add venv/ to .gitignore to exclude Python virtual environment from version control
+[32m|[m > [33m|[m [1;33m|[m [1;33m|[m [33md5c0773d[m Add vendors/ to .gitignore to exclude third-party dependencies from version control
+[32m|[m [33m|[m[33m/[m [1;33m/[m [1;33m/[m  
+[32m|[m > [1;33m|[m [1;33m|[m [33mf56850bc[m fix: 优化 MongoDB 批量写入，解决历史数据同步超时问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m8378ddf0[m fix: AKShare 实时行情同步时过滤退市股票
+[32m|[m > [1;33m|[m [1;33m|[m [33m4b40b20f[m 配置数据更新
+[32m|[m > [1;33m|[m [1;33m|[m [33m960f13be[m fix: 优化 AKShare 实时行情同步，避免批量接口频繁调用被限流
+[32m|[m > [1;33m|[m [1;33m|[m [33m890b8a6e[m fix: 为 AKShare 行情同步任务添加 force 参数支持
+[32m|[m > [1;33m|[m [1;33m|[m [33m6ca647b0[m fix: 修复Tushare连接和实时行情同步的交易时间检查问题
+[32m|[m > [1;33m|[m [1;33m|[m [33mcc32639c[m fix: 修复AKShare新浪接口股票代码带交易所前缀的问题
+[32m|[m > [1;33m|[m [1;33m|[m [33mcf892e30[m feat: 程序启动时自动从历史数据导入收盘数据到market_quotes
+[32m|[m > [1;33m|[m [1;33m|[m [33m586e3dc3[m fix: 修复数据源状态列表排序顺序
+[32m|[m > [1;33m|[m [1;33m|[m [33m719b9da3[m feat: 优化数据源优先级管理和股票筛选功能
+[32m|[m > [1;33m|[m [1;33m|[m [33mb17deee2[m fix: 修复数据源测试接口参数传递问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m8e4eeccd[m refactor: 简化数据源连通性测试接口
+[32m|[m > [1;33m|[m [1;33m|[m [33mfd372c7e[m feat: 改进Tushare Token配置优先级和测试超时
+[32m|[m > [1;33m|[m [1;33m|[m [33mf094a62f[m docs: 添加数据源优先级修复说明文档
+[32m|[m > [1;33m|[m [1;33m|[m [33mf632395a[m fix: 修复数据查询不按优先级的问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m4da35a03[m feat: 为Tushare基础数据同步添加重试机制
+[32m|[m > [1;33m|[m [1;33m|[m [33m281587ee[m feat: 为多源基础数据同步添加重试机制
+[32m|[m > [1;33m|[m [1;33m|[m [33m1b97aed5[m feat: 为批量操作添加重试机制，改进超时处理
+[32m|[m > [1;33m|[m [1;33m|[m [33m45a306bd[m fix: 增加MongoDB超时参数配置，解决大量历史数据处理超时问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m1a4b1ca8[m docs: 补充系统日志功能说明到2025-10-29工作博客
+[32m|[m > [1;33m|[m [1;33m|[m [33mdfbead79[m docs: 添加2025-10-29工作博客 - 数据源统一与报告导出功能
+[32m|[m > [1;33m|[m [1;33m|[m [33m66ed4c65[m fix: 改进DeepSeek新闻分析的日志和错误处理
+[32m|[m > [1;33m|[m [1;33m|[m [33m88149c72[m fix: 修复DeepSeek市场分析问题和日志显示问题
+[32m|[m > [1;33m|[m [1;33m|[m [33mc3b0a336[m fix: 改进MongoDB数据源日志，明确显示具体数据源类型
+[32m|[m > [1;33m|[m [1;33m|[m [33me2e88c8f[m 增加中文字体支持
+[32m|[m > [1;33m|[m [1;33m|[m [33mee788398[m fix: 使用GitHub直接下载pandoc和wkhtmltopdf
+[32m|[m > [1;33m|[m [1;33m|[m [33m6532b5a0[m fix: Dockerfile添加wkhtmltopdf支持PDF导出
+[32m|[m > [1;33m|[m [1;33m|[m [33m264d7b01[m 增加pdf打包能力
+[32m|[m > [1;33m|[m [1;33m|[m [33m62126b65[m feat: 添加PDF和Word格式报告导出功能
+[32m|[m > [1;33m|[m [1;33m|[m [33m6cf1b949[m fix: AKShare数据源添加市值、市盈率、市净率等财务指标
+[32m|[m > [1;33m|[m [1;33m|[m [33m62aab5e5[m fix: 移除config目录映射，使用镜像内的配置文件
+[32m|[m > [1;33m|[m [1;33m|[m [33m2d74115b[m feat: docker-compose.hub.nginx.yml 支持本地构建
+[32m|[m > [1;33m|[m [1;33m|[m [33mb51737cf[m debug: 添加详细的日志初始化调试信息
+[32m|[m > [1;33m|[m [1;33m|[m [33m7205e52b[m feat: 统一日志配置到TOML，支持Docker环境生成tradingagents.log
+[32m|[m > [1;33m|[m [1;33m|[m [33mc93c20c5[m fix: 修复Docker环境下日志导出服务找不到日志文件的问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m5548a162[m fix: 修复股票同步API响应格式错误
+[32m|[m > [1;33m|[m [1;33m|[m [33me241fc2f[m feat: 自选股页面添加单个股票同步功能
+[32m|[m > [1;33m|[m [1;33m|[m [33m0cf96f4c[m feat: 股票详情页和自选股页面添加数据同步功能
+[32m|[m > [1;33m|[m [1;33m|[m [33m94965acb[m fix: 改进Tushare财务数据获取的错误日志
+[32m|[m > [1;33m|[m [1;33m|[m [33mb752c784[m feat: 股票详情页分析摘要支持Markdown渲染
+[32m|[m > [1;33m|[m [1;33m|[m [33me03a1c77[m fix: 优化日志导出服务配置获取
+[32m|[m > [1;33m|[m [1;33m|[m [33m036c7713[m fix: 优化历史数据保存，解决MongoDB超时问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m5a42c595[m fix: 解决日志路由冲突问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m6b9ecef1[m fix: 修复日志管理功能的导入和菜单
+[32m|[m > [1;33m|[m [1;33m|[m [33m98d173bd[m feat: 添加系统日志导出功能
+[32m|[m > [1;33m|[m [1;33m|[m [33m4f81d480[m 移除tdx的最后代码
+[32m|[m > [1;33m|[m [1;33m|[m [33m7d91349f[m docs: 添加10月27日和28日工作博客
+[32m|[m > [1;33m|[m [1;33m|[m [33ma6750bb3[m fix: 完全移除 TDX（通达信）数据源的残留引用
+[32m|[m > [1;33m|[m [1;33m|[m [33m524c0507[m chore: 更新数据库配置导出文件
+[32m|[m > [1;33m|[m [1;33m|[m [33mb2bb760c[m fix: 多数据源架构索引冲突和配置清理
+[32m|[m > [1;33m|[m [1;33m|[m [33mc88b6025[m fix: K线图日期格式不一致导致显示不完整
+[32m|[m > [1;33m|[m [1;33m|[m [33mddbb0cda[m fix: 历史数据增量同步改进 - 无数据时从上市日期全量同步
+[32m|[m > [1;33m|[m [1;33m|[m [33m49f2d397[m feat: 增加多数据源同步详细进度日志
+[32m|[m > [1;33m|[m [1;33m|[m [33m1b577f9e[m fix: 修复 AKShare 数据源 total_mv 单位不一致问题
+[32m|[m > [1;33m|[m [1;33m|[m [33mbe56c326[m feat: 所有 stock_basic_info 查询统一使用数据源优先级
+[32m|[m > [1;33m|[m [1;33m|[m [33m7a769121[m fix: 添加 BaoStock 数据源测试连接支持
+[32m|[m > [1;33m|[m [1;33m|[m [33me7df66f4[m fix: 修复行业列表接口导入错误
+[32m|[m > [1;33m|[m [1;33m|[m [33m86e67b49[m feat: 行业列表接口支持数据源优先级
+[32m|[m > [1;33m|[m [1;33m|[m [33m08bbee6e[m fix: 修复多数据源同步的数据一致性问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m253d6034[m fix: 修复多数据源同步的 MongoDB 连接和索引冲突问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m27993765[m feat: 实现多数据源隔离存储设计
+[32m|[m > [1;33m|[m [1;33m|[m [33m2460f47d[m docs: 添加实时PE/PB计算与回退策略博文
+[32m|[m > [1;33m|[m [1;33m|[m [33m18727ef3[m feat: 完善实时PE/PB计算的回退策略
+[32m|[m > [1;33m|[m [1;33m|[m [33mf42fc1f6[m fix: 修复实时市值和PE/PB计算逻辑
+[32m|[m > [1;33m|[m [1;33m|[m [33m87913bb6[m feat: 补齐 .env.docker 缺失的配置项
+[32m|[m > [1;33m|[m [1;33m|[m [33m65c88a29[m feat: 统一所有页面的导出报告文件名格式
+[32m|[m > [1;33m|[m [1;33m|[m [33m389e7dde[m feat: K线图支持当天实时数据 + 修复同步时间时区显示
+[32m|[m > [1;33m|[m [1;33m|[m [33mc68539e6[m feat: 基本面快照接口使用动态计算PS（市销率）
+[32m|[m > [1;33m|[m [1;33m|[m [33m41f5d7fd[m feat: 增强基本面快照接口，添加市销率和财务指标
+[32m|[m > [1;33m|[m [1;33m|[m [33m571f9188[m fix: 修复数据源优先级实时同步问题
+[32m|[m > [1;33m|[m [1;33m|[m [33mb7838214[m fix: 增强股票名称获取的错误处理和降级逻辑
+[32m|[m > [1;33m|[m [1;33m|[m [33m1e36a479[m 提示修改一下
+[32m|[m > [1;33m|[m [1;33m|[m [33m544edaa8[m fix: 为所有服务显式指定 ARM64 平台以避免架构不匹配警告
+[32m|[m > [1;33m|[m [1;33m|[m [33ma7a0f5cb[m fix: 修复实时行情同步状态 API 路由冲突
+[32m|[m > [1;33m|[m [1;33m|[m [33mbe0189f7[m fix: 修复 stock_data.py 语法错误
+[32m|[m > [1;33m|[m [1;33m|[m [33m375a4eac[m feat: 前端个股详情页显示实时行情同步状态
+[32m|[m > [1;33m|[m [1;33m|[m [33m7fa9fd1a[m feat: 实时行情同步状态追踪和收盘后缓冲期
+[32m|[m > [1;33m|[m [1;33m|[m [33mc0a3aadc[m fix: 修复迁移脚本并验证 601899 股票信息
+[32m|[m > [1;33m|[m [1;33m|[m [33m7bcc6d08[m fix: 为 stock_basic_info 集合添加 symbol 字段
+[32m|[m > [1;33m|[m [1;33m|[m [33m9f820f28[m fix: 修复 app 目录错误日志配置和市净率计算单位转换
+[32m|[m > [1;33m|[m [1;33m|[m [33mfd60fc1b[m 修改安装手册
+[32m|[m > [1;33m|[m [1;33m|[m [33m61f50ab6[m 苹果系统docker文件
+[32m|[m > [1;33m|[m [1;33m|[m [33m051b7465[m fix(frontend): 修复登录失败时重复显示错误消息的问题
+[32m|[m > [1;33m|[m [1;33m|[m [33mfb2cae70[m feat: 优化错误提示消息的显示机制
+[32m|[m > [1;33m|[m [1;33m|[m [33m70031180[m feat: 优化报告详情和模拟交易的合规性表述
+[32m|[m > [1;33m|[m [1;33m|[m [33m61f48215[m feat: 优化报告详情页面的分析师和模型信息显示
+[32m|[m > [1;33m|[m [1;33m|[m [33m581f0735[m feat: 优化页面底部免责声明的合规性表述
+[32m|[m > [1;33m|[m [1;33m|[m [33m76d315f5[m feat: 优化报告详情页面的合规性表述
+[32m|[m > [1;33m|[m [1;33m|[m [33m7cfece37[m feat: 优化分析结果页面的合规性表述
+[32m|[m > [1;33m|[m [1;33m|[m [33m21bef44e[m 修改说明
+[32m|[m > [1;33m|[m [1;33m|[m [33mbadd8293[m fix: 修正新闻分析师和社媒分析师的职责范围
+[32m|[m > [1;33m|[m [1;33m|[m [33m70b1971c[m feat: 在关于页面添加原项目介绍和致谢
+[32m|[m > [1;33m|[m [1;33m|[m [33mf1fe1d0f[m fix: 修复深色主题下分析页面的白色背景问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m9a579739[m feat: 为数据源添加注册引导功能
+[32m|[m > [1;33m|[m [1;33m|[m [33md58484e5[m fix: 修复 TypeScript 类型错误 - 添加缺失的类型定义
+[32m|[m > [1;33m|[m [1;33m|[m [33m0ad84891[m fix: 调整注册引导提示的字体大小
+[32m|[m > [1;33m|[m [1;33m|[m [33mf7e4546f[m feat: 添加厂家注册引导功能
+[32m|[m > [1;33m|[m [1;33m|[m [33mf631ba7c[m 测试用例
+[32m|[m > [1;33m|[m [1;33m|[m [33m25de33c4[m feat: 单股分析和批量分析优先读取用户偏好设置
+[32m|[m > [1;33m|[m [1;33m|[m [33m1131a4ad[m fix: 修复 /api/auth/me 接口未返回用户偏好设置的问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m1659992e[m feat: 添加用户偏好设置迁移脚本
+[32m|[m > [1;33m|[m [1;33m|[m [33m767ac035[m fix: 修正分析偏好默认值，与单股分析模块保持一致
+[32m|[m > [1;33m|[m [1;33m|[m [33m41ca79f6[m fix: 修复所有设置保存到localStorage的问题
+[32m|[m > [1;33m|[m [1;33m|[m [33me56c5714[m fix: 修复主题设置保存后刷新不生效的问题
+[32m|[m > [1;33m|[m [1;33m|[m [33mf2cacfe7[m docs: 添加个人设置保存问题修复文档
+[32m|[m > [1;33m|[m [1;33m|[m [33m6283a5c5[m fix: 修复所有个人设置保存问题（外观、分析偏好、通知设置）
+[32m|[m > [1;33m|[m [1;33m|[m [33me2fef6b5[m fix: 修复通用设置（邮箱地址）保存后刷新恢复原值的问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m4f298a50[m docs: 添加异步/同步冲突问题修复文档
+[32m|[m > [1;33m|[m [1;33m|[m [33mda3406b2[m fix: 修复数据源优先级读取时的异步/同步冲突问题
+[32m|[m > [1;33m|[m [1;33m|[m [33mf44eeec4[m docs: 更新TTM计算总结文档，添加Tushare Token配置优先级问题的关联
+[32m|[m > [1;33m|[m [1;33m|[m [33m75edbc8e[m fix: 修复Tushare Token配置优先级问题，支持Web后台修改立即生效
+[32m|[m > [1;33m|[m [1;33m|[m [33m4bf6b526[m docs: 添加TTM计算问题修复总结文档
+[32m|[m > [1;33m|[m [1;33m|[m [33m80773169[m fix: 修复基本面分析实时API调用中的TTM计算问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m5384339c[m fix: 修复AKShare数据源的TTM计算和估值指标
+[32m|[m > [1;33m|[m [1;33m|[m [33m9c11d987[m fix: 重构TTM计算逻辑，正确处理累计值和基准期选择
+[32m|[m > [1;33m|[m [1;33m|[m [33m5de898eb[m fix: 移除TTM计算中不准确的简单年化降级策略
+[32m|[m > [1;33m|[m [1;33m|[m [33mb0413c60[m fix: Tushare数据源添加TTM营业收入和净利润计算
+[32m|[m > [1;33m|[m [1;33m|[m [33mfaebfbc8[m feat: 添加PS计算验证程序
+[32m|[m > [1;33m|[m [1;33m|[m [33mb7525a4a[m docs: 添加估算财务指标审计总结文档
+[32m|[m > [1;33m|[m [1;33m|[m [33mad69c716[m fix: 修复Tushare数据源市值计算和删除未使用的估算函数
+[32m|[m > [1;33m|[m [1;33m|[m [33mc5225234[m docs: 标记Tushare和实时行情数据源的PS/PE计算问题
+[32m|[m > [1;33m|[m [1;33m|[m [33mf3330209[m fix: 修复市销率(PS)计算使用季度/半年报数据的bug
+[32m|[m > [1;33m|[m [1;33m|[m [33mf176a10d[m fix: 优化WebSocket连接逻辑，支持开发和生产环境
+[32m|[m > [1;33m|[m [1;33m|[m [33md0512fc1[m fix: 修复Docker部署时WebSocket连接失败的问题
+[32m|[m > [1;33m|[m [1;33m|[m [33mc60d952c[m feat: 完成302.ai聚合平台接入
+[32m|[m > [1;33m|[m [1;33m|[m [33mbb080eb9[m fix: 完善智谱AI API测试，添加详细错误日志和正确的测试模型
+[32m|[m > [1;33m|[m [1;33m|[m [33m14a5bb31[m fix: 修复智谱AI等非标准版本号API的URL拼接问题
+[32m|[m > [1;33m|[m [1;33m|[m [33md5016b54[m fix: 完善分析报告字段提取逻辑，支持13个完整报告模块
+[32m|[m > [1;33m|[m [1;33m|[m [33md0f1e6e6[m fix: 修复通知 store 中未定义的方法引用
+[32m|[m > [1;33m|[m [1;33m|[m [33m5e1e6408[m refactor: 移除分析报告列表中的文件大小列
+[32m|[m > [1;33m|[m [1;33m|[m [33m78b03629[m fix: 优化批量分析页面深色主题下的页面头部样式
+[32m|[m > [1;33m|[m [1;33m|[m [33mb0eeba89[m fix: 优化单股分析页面深色主题下的页面头部样式
+[32m|[m > [1;33m|[m [1;33m|[m [33m700d923e[m fix: 强制使用 user_favorites 集合存储自选股
+[32m|[m > [1;33m|[m [1;33m|[m [33mbf176bd8[m debug: 添加自选股功能详细日志以排查 500 错误
+[32m|[m > [1;33m|[m [1;33m|[m [33m7c81ffb8[m fix: 修复添加自选股时返回值判断错误
+[32m|[m > [1;33m|[m [1;33m|[m [33mced8a46e[m fix: 优化报告详情页面深色主题下的文字对比度
+[32m|[m > [1;33m|[m [1;33m|[m [33m48ccde4b[m fix: 优化关于页面深色主题下白色卡片内标题的对比度
+[32m|[m > [1;33m|[m [1;33m|[m [33m9da8e48b[m fix: 优化暗色主题下按钮和文本的对比度
+[32m|[m > [1;33m|[m [1;33m|[m [33me5d11eea[m fix: 移除不存在的 default-avatar.png 引用，使用 Element Plus 默认图标
+[32m|[m > [1;33m|[m [1;33m|[m [33mf4269e52[m feat: 优化前端认证管理，统一处理 token 失效和自动刷新
+[32m|[m > [1;33m|[m [1;33m|[m [33meb0d02e9[m feat: 配置导入脚本默认使用覆盖模式
+[32m|[m > [1;33m|[m [1;33m|[m [33m06b8880c[m fix: 构建脚本同时推送 VERSION 和 latest 标签
+[32m|[m > [1;33m|[m [1;33m|[m [33m11a29c56[m feat: 配置导入脚本支持宿主机和 Docker 容器两种运行环境
+[32m|[m > [1;33m|[m [1;33m|[m [33m466e7647[m 正确的导出配置文件
+[32m|[m > [1;33m|[m [1;33m|[m [33m857bbae7[m fix: 修复数据库导出时 max_tokens 等配置字段被错误脱敏的问题
+[32m|[m > [1;33m|[m [1;33m|[m [33mfb79f497[m fix: 修复配置导出导入时 max_tokens 等字段为空字符串的问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m56678f73[m fix: 修复所有路由文件的 auth 导入引用
+[32m|[m > [1;33m|[m [1;33m|[m [33m8d0fdc42[m fix: build-multiarch.sh 支持通过环境变量覆盖 PLATFORMS
+[32m|[m > [1;33m|[m [1;33m|[m [33md763e115[m chore: 删除废弃的基于配置文件的认证路由
+[32m|[m > [1;33m|[m [1;33m|[m [33m38670a41[m fix: 切换到基于数据库的认证路由
+[32m|[m > [1;33m|[m [1;33m|[m [33m8a71457f[m chore: 更新文档和演示配置文件
+[32m|[m > [1;33m|[m [1;33m|[m [33m9ada144c[m feat: 数据导出增加脱敏功能
+[32m|[m > [1;33m|[m [1;33m|[m [33mbd4c976a[m docs: 添加实时行情入库服务配置文档和优化总结
+[32m|[m > [1;33m|[m [1;33m|[m [33mebb9197f[m feat: 优化实时行情入库服务 - 智能频率控制和接口轮换
+[32m|[m > [1;33m|[m [1;33m|[m [33mb349e899[m feat: 为定时任务管理页面添加搜索和筛选功能
+[32m|[m > [1;33m|[m [1;33m|[m [33m8bb8e028[m fix: 为所有定时任务添加友好的中文名称
+[32m|[m > [1;33m|[m [1;33m|[m [33m7fd534c5[m fix: 修复数据同步和数据源优先级问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m410fd214[m feat: 基本面分析同时提供PE和PE_TTM两个指标
+[32m|[m > [1;33m|[m [1;33m|[m [33m77242558[m feat: 优化PE/PB计算策略 - 优先使用动态PE（基于实时股价+Tushare TTM）
+[32m|[m > [1;33m|[m [1;33m|[m [33m2baa89ff[m fix: 修复PE计算日志中变量引用错误
+[32m|[m > [1;33m|[m [1;33m|[m [33m7b723b69[m refactor: 优化基本面分析数据获取策略
+[32m|[m > [1;33m|[m [1;33m|[m [33mbec86db6[m feat: 将分析师数据获取范围改为可配置参数
+[32m|[m > [1;33m|[m [1;33m|[m [33mc04fc53f[m refactor: 删除 Apple Silicon 独立脚本，统一使用 ARM64
+[32m|[m > [1;33m|[m [1;33m|[m [33m2ac8dd5e[m docs: 添加快速构建参考指南
+[32m|[m > [1;33m|[m [1;33m|[m [33m76f24e0f[m feat: 采用分架构独立仓库策略，提高发布效率
+[32m|[m > [1;33m|[m [1;33m|[m [33m3193107a[m opt: 降低 AkShare 实时行情同步频率，避免被封
+[32m|[m > [1;33m|[m [1;33m|[m [33m3915f5e1[m fix: 支持带前缀的股票代码匹配，增强批量获取兼容性
+[32m|[m > [1;33m|[m [1;33m|[m [33m3f009da6[m opt: 优化 AkShare 批量获取实时行情，避免频率限制
+[32m|[m > [1;33m|[m [1;33m|[m [33mf46f952f[m test: 添加测试脚本并验证修复效果
+[32m|[m > [1;33m|[m [1;33m|[m [33m28e1579e[m fix: 使用正确的数据库初始化函数名
+[32m|[m > [1;33m|[m [1;33m|[m [33m071fd4e1[m fix: 脚本添加数据库初始化
+[32m|[m > [1;33m|[m [1;33m|[m [33m3741ab72[m fix: 修复脚本日志配置问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m2d993c51[m docs: 添加 market_quotes code 字段 null 值修复指南
+[32m|[m > [1;33m|[m [1;33m|[m [33m6bab35bb[m fix: 修复 market_quotes 集合 code 字段为 null 导致的唯一索引冲突
+[32m|[m > [1;33m|[m [1;33m|[m [33mbcd9d090[m fix: 修复 Tushare 同步服务中 Pydantic 模型调用字典方法的错误
+[32m|[m > [1;33m|[m [1;33m|[m [33m650b22a7[m refactor: 前端代码使用统一数据源编码
+[32m|[m > [1;33m|[m [1;33m|[m [33ma0a48401[m refactor: 后端代码使用统一数据源编码
+[32m|[m > [1;33m|[m [1;33m|[m [33mbc4d0b41[m feat: 创建统一数据源编码管理系统
+[32m|[m > [1;33m|[m [1;33m|[m [33m3e6998c9[m fix: 数据源降级优先级支持市场分类（A股/美股/港股）
+[32m|[m > [1;33m|[m [1;33m|[m [33m9d1a5c51[m fix: 修复分析时数据源降级优先级硬编码问题
+[32m|[m > [1;33m|[m [1;33m|[m [33me9940355[m fix: 修复数据源优先级配置不生效的问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m947a7917[m refactor: 完全移除 SSE + Redis PubSub 通知系统，只保留 WebSocket
+[32m|[m > [1;33m|[m [1;33m|[m [33ma85c86c3[m fix: 统一使用配置时区（now_tz）替代 UTC 时间（datetime.utcnow）
+[32m|[m > [1;33m|[m [1;33m|[m [33m0ba942ef[m docs: 添加 2025-10-23 工作日志 - WebSocket 通知系统与数据修复
+[32m|[m > [1;33m|[m [1;33m|[m [33m6ea839a1[m config: 优化 Nginx 配置以支持 WebSocket 长连接
+[32m|[m > [1;33m|[m [1;33m|[m [33m65839c07[m feat: 前端切换到 WebSocket 通知系统
+[32m|[m > [1;33m|[m [1;33m|[m [33m3866cf9f[m feat: 添加 WebSocket 通知系统，替代 SSE + Redis PubSub
+[32m|[m > [1;33m|[m [1;33m|[m [33m60d1910d[m test: 添加 trade_date 修复效果验证脚本
+[32m|[m > [1;33m|[m [1;33m|[m [33m36b4cf90[m fix: 修复 AKShare 数据源 trade_date 字段格式错误的问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m0947d0a9[m fix: 移除仪表台市场快讯的'查看更多'按钮
+[32m|[m > [1;33m|[m [1;33m|[m [33md26c6a2d[m fix: 限制每个用户只能有一个活跃的 SSE 连接，防止 PubSub 连接泄漏
+[32m|[m > [1;33m|[m [1;33m|[m [33m457d2dc5[m fix: 修复 Redis 连接池配置和 PubSub 连接泄漏的根本原因
+[32m|[m > [1;33m|[m [1;33m|[m [33m34c11f0f[m docs: 更新新闻同步任务配置指南，反映最新修复
+[32m|[m > [1;33m|[m [1;33m|[m [33md34e27ed[m fix: 修复新闻同步任务不显示在定时任务管理界面的问题
+[32m|[m > [1;33m|[m [1;33m|[m [33mbc8ab85f[m feat: 启用新闻同步定时任务并添加配置指南
+[32m|[m > [1;33m|[m [1;33m|[m [33ma4866d20[m fix: 修复仪表台市场快讯显示为空的问题
+[32m|[m > [1;33m|[m [1;33m|[m [33mf9e090ba[m docs: 添加 Redis 连接泄漏问题全面分析报告
+[32m|[m > [1;33m|[m [1;33m|[m [33m3cb655ca[m fix: 修复 Redis PubSub 连接泄漏问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m393d5f63[m fix: 修复分析报告下单后跳转到不存在页面的问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m123afa41[m feat: 添加硅基流动（SiliconFlow）大模型厂家支持
+[32m|[m > [1;33m|[m [1;33m|[m [33m1f5c931d[m docs: 添加配置验证顶部提示修复总结文档
+[32m|[m > [1;33m|[m [1;33m|[m [33m44ba9318[m fix: 配置验证顶部提示区分必需配置和推荐配置
+[32m|[m > [1;33m|[m [1;33m|[m [33ma4e0a46c[m docs: 更新 API Key 配置管理分析文档，标记所有问题已修复
+[32m|[m > [1;33m|[m [1;33m|[m [33m77bc2788[m feat: 统一 API Key 配置管理，明确区分 MongoDB 和环境变量配置
+[32m|[m > [1;33m|[m [1;33m|[m [33m8775327f[m feat: 配置验证支持环境变量回退，使用黄色警告而非错误
+[32m|[m > [1;33m|[m [1;33m|[m [33m2433dd10[m fix: 修复配置桥接中的异步事件循环冲突问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m2aded21a[m feat: 支持在数据源编辑界面填写 API Key
+[32m|[m > [1;33m|[m [1;33m|[m [33m26f4951a[m fix: 修复配置重载时厂家 API 配置复原的问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m0e9b07a5[m fix: 修复 Redis PubSub 连接泄漏问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m69de97ac[m fix: 修复 FinnHub 数据源创建时的 422 验证错误
+[32m|[m > [1;33m|[m [1;33m|[m [33mee1b9919[m fix: 修复数据源配置和测试问题
+[32m|[m > [1;33m|[m [1;33m|[m [33ma63c0701[m docs: 添加 2025-10-22 配置测试与 Docker 环境适配博文
+[32m|[m > [1;33m|[m [1;33m|[m [33m3cb42824[m 解决google 代理测试问题。
+[32m|[m > [1;33m|[m [1;33m|[m [33mb254b85e[m fix(llm): 修复Google AI中转地址路径拼接错误
+[32m|[m > [1;33m|[m [1;33m|[m [33mf0e173cd[m fix(config): 修复Redis配置测试在Docker环境下的连接问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m90431d39[m fix(config): 修复数据库测试中的变量名错误
+[32m|[m > [1;33m|[m [1;33m|[m [33mc274a214[m fix(config): 修复数据库配置测试在Docker环境下的连接问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m22238d96[m fix(config): 修复LLM配置测试使用写死模型的问题
+[32m|[m > [1;33m|[m [1;33m|[m [33mb23fbb6a[m fix(config): 修复数据库配置测试连接和网络请求问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m51703692[m fix(network): 优化网络请求配置，禁用缓存并添加重试机制
+[32m|[m > [1;33m|[m [1;33m|[m [33me841a7dc[m feat: 支持自定义大模型厂家，移除硬编码限制
+[32m|[m > [1;33m|[m [1;33m|[m [33m6e918ce5[m docs: 添加 2025-10-21 配置系统全面优化博文
+[32m|[m > [1;33m|[m [1;33m|[m [33m12cedb0c[m 百炼的调用地址修改
+[32m|[m > [1;33m|[m [1;33m|[m [33m14ce8927[m 测试修复
+[32m|[m > [1;33m|[m [1;33m|[m [33mcc2bfce7[m fix: 修复 MongoDB Docker 部署和 Google AI 测试问题
+[32m|[m > [1;33m|[m [1;33m|[m [33mc4b96853[m 修改服务
+[32m|[m > [1;33m|[m [1;33m|[m [33m1929664f[m 提交google ai 说明
+[32m|[m > [1;33m|[m [1;33m|[m [33md3281a4a[m fix: 修复 Google AI client_options 配置，正确提取域名
+[32m|[m > [1;33m|[m [1;33m|[m [33m6a227146[m feat: Google AI 支持自定义 base_url，与其他厂商保持一致
+[32m|[m > [1;33m|[m [1;33m|[m [33m4eb6809e[m feat: Google AI API测试支持自定义base_url并添加详细日志
+[32m|[m > [1;33m|[m [1;33m|[m [33mc2f76170[m fix: 修复前端动态导入模块失败和DashScope API地址错误
+[32m|[m > [1;33m|[m [1;33m|[m [33m1186a1f6[m feat: 数据源配置测试支持环境变量回退
+[32m|[m > [1;33m|[m [1;33m|[m [33m0d788f55[m feat: 完善数据库配置测试功能，支持环境变量回退
+[32m|[m > [1;33m|[m [1;33m|[m [33mccb7c408[m fix: 修复数据库配置API中current_user类型错误
+[32m|[m > [1;33m|[m [1;33m|[m [33m3b565aa9[m feat: 完善数据库配置管理功能
+[32m|[m > [1;33m|[m [1;33m|[m [33ma4ea1e3d[m docs: 添加配置测试功能修复说明文档
+[32m|[m > [1;33m|[m [1;33m|[m [33m13b13f52[m fix: 修复数据源和数据库配置测试功能，实现真实连接验证
+[32m|[m > [1;33m|[m [1;33m|[m [33mb73d8ef6[m fix: 修复大模型配置测试功能，实现真实API调用验证
+[32m|[m > [1;33m|[m [1;33m|[m [33m7754a965[m docs: 添加多市场数据架构开发指南和代码模板
+[32m|[m > [1;33m|[m [1;33m|[m [33mef9b79aa[m fix: 修复厂家配置 API Key 删除后仍显示的问题
+[32m|[m > [1;33m|[m [1;33m|[m [33mfbfb0e29[m fix: 修复配置验证逻辑，改为验证厂家级别配置且只验证已启用项
+[32m|[m > [1;33m|[m [1;33m|[m [33m5b659ce5[m feat: 增强配置验证功能，支持 MongoDB 配置验证
+[32m|[m > [1;33m|[m [1;33m|[m [33m386f514d[m fix: 修复配置验证不一致问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m57d399b3[m docs: 添加配置验证占位符检测修复文档
+[32m|[m > [1;33m|[m [1;33m|[m [33m6b100db7[m fix: 修复配置验证逻辑，正确识别占位符 API Key
+[32m|[m > [1;33m|[m [1;33m|[m [33m3ff6892d[m 删掉无用的
+[32m|[m > [1;33m|[m [1;33m|[m [33m38f37134[m 配置文件修改
+[32m|[m > [1;33m|[m [1;33m|[m [33me531fce8[m 配置修改
+[32m|[m > [1;33m|[m [1;33m|[m [33m613625eb[m feat: 配置 GitHub Actions 自动构建多架构 Docker 镜像
+[32m|[m > [1;33m|[m [1;33m|[m [33mc4d37519[m perf: 优化 Docker 多架构构建性能
+[32m|[m > [1;33m|[m [1;33m|[m [33mb9672d23[m feat: 支持多架构 Docker 镜像构建（amd64 + arm64）
+[32m|[m > [1;33m|[m [1;33m|[m [33m2e803914[m 修改导入数据。
+[32m|[m > [1;33m|[m [1;33m|[m [33m04dffce2[m feat: 配置数据导出时排除行情数据集合
+[32m|[m > [1;33m|[m [1;33m|[m [33m612f0641[m chore: 清理测试文件
+[32m|[m > [1;33m|[m [1;33m|[m [33m97e7af5a[m fix: 修复 SSE 心跳消息发送过于频繁的问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m27bbc193[m fix: 修复缓存管理页面从 API 响应中提取数据
+[32m|[m > [1;33m|[m [1;33m|[m [33mae6e4472[m fix: 修复自适应缓存系统初始化和 MongoDB 缓存统计
+[32m|[m > [1;33m|[m [1;33m|[m [33m40d19e20[m fix: 统一缓存统计数据格式，修复前端显示 NaN 问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m92dfbcd2[m fix: 修复缓存管理API导入路径错误
+[32m|[m > [1;33m|[m [1;33m|[m [33md4261b83[m docs: 更新 Tushare 注册链接和积分说明
+[32m|[m > [1;33m|[m [1;33m|[m [33m22f9e31b[m debug: 添加详细日志以调试环境变量 API 密钥读取
+[32m|[m > [1;33m|[m [1;33m|[m [33m54589261[m feat: 禁用供应商后自动隐藏其所有模型
+[32m|[m > [1;33m|[m [1;33m|[m [33m7cd5e5af[m fix: 修复配置桥接中的 provider.value 错误
+[32m|[m > [1;33m|[m [1;33m|[m [33m0c9a9b2a[m fix: 修复配置重载API调用错误
+[32m|[m > [1;33m|[m [1;33m|[m [33mea5aaae2[m fix: 修复厂家启用/禁用后前端状态不更新的问题
+[32m|[m > [1;33m|[m [1;33m|[m [33me07ff3b2[m fix: 修复厂家启用/禁用功能 - 同步状态到后端
+[32m|[m > [1;33m|[m [1;33m|[m [33m71bdb912[m feat: 添加大模型配置的启用/禁用功能
+[32m|[m > [1;33m|[m [1;33m|[m [33m3d5746cb[m fix: 修复 provider 字段从枚举改为字符串后的日志输出
+[32m|[m > [1;33m|[m [1;33m|[m [33m413754d6[m fix: 移除缓存路由中不存在的 error 导入
+[32m|[m > [1;33m|[m [1;33m|[m [33m48224f72[m fix: 修复缓存路由导入错误 - 使用正确的 auth 模块路径
+[32m|[m > [1;33m|[m [1;33m|[m [33m181b86b3[m fix: 支持动态添加新供应商 - 将 provider 字段从枚举改为字符串
+[32m|[m > [1;33m|[m [1;33m|[m [33m247a6118[m fix: 添加大模型配置时自动加载新供应商的可用模型列表
+[32m|[m > [1;33m|[m [1;33m|[m [33m886d25f6[m feat: 实现缓存管理功能的前后端对接
+[32m|[m > [1;33m|[m [1;33m|[m [33m5e170230[m fix: 优化价格输入和显示体验
+[32m|[m > [1;33m|[m [1;33m|[m [33ma1d0c419[m 配置: 从 Git 追踪中移除 frontend/components.d.ts
+[32m|[m > [1;33m|[m [1;33m|[m [33mb522b709[m 修复: 厂家配置的 default_base_url 在分析流程中未生效的问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m31570c40[m 新增: 用户调查问卷及相关文档
+[32m|[m > [1;33m|[m [1;33m|[m [33mce15d2a0[m 修复: 厂家配置的 default_base_url 未生效的问题
+[32m|[m > [1;33m|[m [1;33m|[m [33me1f32536[m feat: 添加模型信息和股票名称追踪功能
+[32m|[m > [1;33m|[m [1;33m|[m [33m1432ccb9[m deepseek采用预处理获新闻
+[32m|[m > [1;33m|[m [1;33m|[m [33mc0fd28d8[m 博客更新
+[32m|[m > [1;33m|[m [1;33m|[m [33m472f1079[m 类组件类型定义
+[32m|[m > [1;33m|[m [1;33m|[m [33mf3aa1949[m chore(types): 扩展 vue-router RouteMeta（title/transition/requiresAuth/icon/hideInMenu）以修复 BasicLayout 中 route.meta.transition 的类型报错
+[32m|[m > [1;33m|[m [1;33m|[m [33m2db8e160[m fix(frontend): 防止移动端点击显示菜单按钮事件冒泡导致侧栏立即再次隐藏，添加 @click.stop 到切换按钮。并保持点击空白处/遮罩关闭行为
+[32m|[m > [1;33m|[m [1;33m|[m [33m7c7e6661[m 帮助跳转链接更新
+[32m|[m > [1;33m|[m [1;33m|[m [33m89f00ed0[m feat(analysis): enable report download; fix market type validation and format help\n\n- Implement report download via /api/reports/{id}/download (markdown)\n- Normalize route market value, add MarketType & AnalysisForm types\n- Align stock code validation and format help calls
+[32m|[m > [1;33m|[m [1;33m|[m [33mc9155356[m chore(frontend): 更新 components.d.ts 自动生成的全局组件与指令类型
+[32m|[m > [1;33m|[m [1;33m|[m [33mc537bb7b[m fix(frontend): 修复状态标签类型与路由行为
+[32m|[m > [1;33m|[m [1;33m|[m [33m8620f71b[m 修复bug：使用统计接口返回数据结构错误
+[32m|[m > [1;33m|[m [1;33m|[m [33m73e78f3f[m fix(frontend): 使用 type-only import 引入 ApiResponse，修复 Vite 运行时报错 does not provide an export named 'ApiResponse'
+[32m|[m > [1;33m|[m [1;33m|[m [33m6c514e08[m chore(frontend): 为使用统计 API 使用 ApiClient.get 并显式返回 ApiResponse 类型，修复 IDE 对 res.success 的类型报错
+[32m|[m > [1;33m|[m [1;33m|[m [33m6cafb200[m fix(frontend): 回滚误改并统一使用 res.success 进行响应判断
+[32m|[m > [1;33m|[m [1;33m|[m [33m13317b09[m chore(frontend): 同步自动生成的组件类型声明并修正行尾\n\n- 更新 ElementPlus 组件声明（自动生成）\n- 处理 Windows CRLF/LF 差异
+[32m|[m > [1;33m|[m [1;33m|[m [33m27ea8e7d[m fix(frontend): 修复 /settings/usage 响应处理导致数据不显示\n\n- 正确使用 ApiResponse 结构（res.success / res.data）\n- 统计概览与记录表格正常渲染
+[32m|[m > [1;33m|[m [1;33m|[m [33m31de61f7[m chore(frontend): 规范化 components.d.ts 行尾并同步类型声明\n\n- Windows 环境下行尾统一处理（CRLF/LF）\n- 保留已新增的 ElementPlus 组件类型：ElRadioButton/ElRadioGroup/ElResult/ElSkeleton
+[32m|[m > [1;33m|[m [1;33m|[m   [33m2596febd[m Merge branch 'feature/unified-standard-plugin-llm-v1' into v1.0.0-preview
+[32m|[m [34m|[m[35m\[m [1;33m\[m [1;33m\[m  
+[32m|[m [34m|[m > [1;33m|[m [1;33m|[m [33m4cbd8dc9[m chore(frontend): 更新 ElementPlus 组件类型声明\n\n- 在 components.d.ts 中补充 ElRadioButton/ElRadioGroup/ElResult/ElSkeleton\n\nchore(router): 清理分析模块子路由\n\n- 临时移除 AnalysisHistory 子路由以统一入口（任务中心/报告页）\n\ndocs(tech_reviews): 新增回测/模拟交易与许可策略技术回顾文档
+[32m|[m [34m|[m > [1;33m|[m [1;33m|[m [33ma35b6223[m fix(dashboard): 实现最近分析的查看/下载行为\n\n- 查看跳转到 ReportDetail（使用 task_id）\n- 下载调用 /api/reports/{id}/download?format=markdown 并保存文件\n- 增加失败提示与文件名兼容处理
+[32m|[m [34m|[m[34m/[m [1;33m/[m [1;33m/[m  
+[32m|[m > [1;33m|[m [1;33m|[m [33m29a11c3c[m docs: add meeting minutes, unified data standard, plugin governance, prompt strategization, and dev plan (2025-10-19)
+[32m|[m > [1;33m|[m [1;33m|[m [33m0913efde[m feat(frontend): update About hero metrics (agents=12, data sources=12+)
+[32m|[m > [1;33m|[m [1;33m|[m [33mb60b12eb[m frontend: update copyright year to 2025 on Login and About pages; keep license text consistent with Apache 2.0 (open-source) and proprietary (frontend/backend)
+[32m|[m > [1;33m|[m [1;33m|[m [33mef21bd04[m frontend: correct license statement on About page to reflect Apache 2.0 for open-source components and proprietary license for frontend/backend; remove incorrect MIT claim
+[32m|[m > [1;33m|[m [1;33m|[m [33m2db73496[m refactor(docs): remove root v1.0.0 release files moved to docs/releases
+[32m|[m > [1;33m|[m [1;33m|[m [33md2e39304[m docs: add and update comprehensive documentation set
+[32m|[m > [1;33m|[m [1;33m|[m [33m8352dcfe[m fix(frontend): route 'Manage' button to /settings/sync
+[32m|[m > [1;33m|[m [1;33m|[m [33m2eb32d4e[m fix: 修改配置优先级 - .env 文件优先于数据库配置
+[32m|[m > [1;33m|[m [1;33m|[m [33m5ed83dbd[m fix: 修复 DashScope 适配器中重复导入 os 模块导致的变量作用域错误
+[32m|[m > [1;33m|[m [1;33m|[m [33m8462039e[m debug: 添加详细的 API Key 读取日志
+[32m|[m > [1;33m|[m [1;33m|[m [33m83897380[m refactor: 清理 BaoStock 行业数据中的编码前缀
+[32m|[m > [1;33m|[m [1;33m|[m [33mc71dd955[m feat: BaoStock 数据源添加行业信息获取功能
+[32m|[m > [1;33m|[m [1;33m|[m [33m43541121[m fix: 修复 AKShare 股票名称显示为占位符的问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m7415faa7[m fix: 修复 full_symbol 字段为 null 导致的 MongoDB 唯一索引冲突
+[32m|[m > [1;33m|[m [1;33m|[m [33m09cf6788[m chore: 升级版本号到 1.0.0-preview
+[32m|[m > [1;33m|[m [1;33m|[m [33mcf36001b[m fix: 同步 requirements.txt 中的 langchain-google-genai 版本要求
+[32m|[m > [1;33m|[m [1;33m|[m [33m0c2901f2[m fix: 修复 Google AI client_options 未定义错误
+[32m|[m > [1;33m|[m [1;33m|[m [33m03b4ff04[m docs: 完善 Docker 部署文档和配置说明
+[32m|[m > [1;33m|[m [1;33m|[m [33m5a5637d7[m feat: 完善 Docker 部署配置和文档
+[32m|[m > [1;33m|[m [1;33m|[m [33mb43eb37f[m 更新数据推送
+[32m|[m > [1;33m|[m [1;33m|[m [33mb065cefd[m 针对dockr环境做调整
+[32m|[m > [1;33m|[m [1;33m|[m [33m64b28e81[m feat: Dockerfile.backend 添加 install 目录到容器
+[32m|[m > [1;33m|[m [1;33m|[m [33m408fd1a4[m 演示数据
+[32m|[m > [1;33m|[m [1;33m|[m [33m5651120a[m chore: 删除旧的数据库导出配置文件
+[32m|[m > [1;33m|[m [1;33m|[m [33m57b258cd[m feat: 配置数据导出增加 market_quotes 和 stock_basic_info 集合
+[32m|[m > [1;33m|[m [1;33m|[m [33mce246cd0[m chore: 添加 backups/ 目录到 .gitignore
+[32m|[m > [1;33m|[m [1;33m|[m [33m624a8a5f[m feat: 添加开发和运维 PowerShell 脚本及测试环境配置
+[32m|[m > [1;33m|[m [1;33m|[m [33mcddf905c[m feat: 添加数据维护和测试辅助脚本
+[32m|[m > [1;33m|[m [1;33m|[m [33m79190bed[m docs: 添加技术文档和问题修复记录
+[32m|[m > [1;33m|[m [1;33m|[m [33m78e8d493[m feat: 添加 AKShare 股票同步优化工具
+[32m|[m > [1;33m|[m [1;33m|[m [33m7696f12e[m feat: 添加 PE/PB 数据诊断和测试工具
+[32m|[m > [1;33m|[m [1;33m|[m [33m963a7cc4[m feat: 增强配置管理和基础数据同步功能
+[32m|[m > [1;33m|[m [1;33m|[m [33m8996eda4[m fix: 修复股票筛选页面跳转到详情页的导航问题
+[32m|[m > [1;33m|[m [1;33m|[m [33mabd41ff0[m fix: 统一 MongoDB 集合中的 code 和 symbol 字段
+[32m|[m > [1;33m|[m [1;33m|[m [33m84234784[m perf: 优化 AKShare 股票列表获取性能
+[32m|[m > [1;33m|[m [1;33m|[m [33mdf8c2bd7[m fix: 修复基本面分析报告中 PE/PB 数据缺失问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m530827a7[m refactor: 重命名 BaoStock 实时行情同步任务为日K线同步
+[32m|[m > [1;33m|[m [1;33m|[m [33mc2b3dcab[m fix: 修复财务数据 code 字段缺失导致的唯一索引冲突
+[32m|[m > [1;33m|[m [1;33m|[m [33m53513035[m fix: 修复 AKShare 返回 7 位数字股票代码的问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m806503af[m fix: 修复前端访问后端 405 错误
+[32m|[m > [1;33m|[m [1;33m|[m [33mc10a303a[m feat: 添加配置数据导出脚本（PowerShell）
+[32m|[m > [1;33m|[m [1;33m|[m [33m01cde507[m chore: 更新项目配置和文档
+[32m|[m > [1;33m|[m [1;33m|[m [33m0508ffef[m docs: 添加系统架构和配置说明文档
+[32m|[m > [1;33m|[m [1;33m|[m [33m0b830f21[m fix: 清理 MongoDB 重复集合命名问题
+[32m|[m > [1;33m|[m [1;33m|[m [33mfb0ef6ba[m feat: 统一 Docker 数据卷配置并清理旧数据卷
+[32m|[m > [1;33m|[m [1;33m|[m [33m076cf70f[m feat: 添加演示系统部署完整方案
+[32m|[m > [1;33m|[m [1;33m|[m [33m54840374[m fix: 修复 preferred_sources 参数未生效的问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m29ed0b9a[m fix: 修复数据源测试时其他API接口超时的问题
+[32m|[m > [1;33m|[m [1;33m|[m [33ma7e86bb2[m refactor: 统一Web适配层到模块化版本
+[32m|[m > [1;33m|[m [1;33m|[m [33mc799600a[m docs: 添加数据适配器架构分析文档
+[32m|[m > [1;33m|[m [1;33m|[m [33m71142585[m feat: 为所有数据源Provider添加同步版本的get_stock_list方法
+[32m|[m > [1;33m|[m [1;33m|[m [33m78ad499f[m fix: 修复Tushare适配器异步/同步调用问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m4056e4d5[m fix: 修复多数据源同步500错误
+[32m|[m > [1;33m|[m [1;33m|[m [33mdbee500a[m fix: 修复Pydantic V2兼容性警告
+[32m|[m > [1;33m|[m [1;33m|[m [33mcffc3972[m feat: 重新设计About页面，提升专业性和现代化程度
+[32m|[m > [1;33m|[m [1;33m|[m [33m8c804b93[m 增加环境变量
+[32m|[m > [1;33m|[m [1;33m|[m [33maa139c6d[m fix: 完善Docker环境配置和开发版本支持
+[32m|[m > [1;33m|[m [1;33m|[m [33m691c03fe[m fix: 添加MONGODB_CONNECTION_STRING环境变量修复localhost连接问题
+[32m|[m > [1;33m|[m [1;33m|[m [33mcc985dff[m fix: 修复MongoDB认证连接和日志目录映射问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m7c15e4a0[m fix: 修复Redis认证配置和数据库连接问题
+[32m|[m > [1;33m|[m [1;33m|[m [33madf182b4[m fix: 修复Docker Hub部署的MongoDB认证配置
+[32m|[m > [1;33m|[m [1;33m|[m [33mbe94a220[m fix: 修复容器内初始化脚本的MongoDB连接和.env文件问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m9bd44daf[m 初始化问题修复
+[32m|[m > [1;33m|[m [1;33m|[m [33m2542ca12[m fix: 修复Docker镜像缺少scripts和docs目录的问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m829ee582[m feat: 完善Docker部署体验和文档
+[32m|[m > [1;33m|[m [1;33m|[m [33m2d36e621[m feat: 实现基于数据库的认证系统
+[32m|[m > [1;33m|[m [1;33m|[m [33mc2cb79f4[m chore: 更新docker-compose.hub.yml使用实际的Docker Hub镜像
+[32m|[m > [1;33m|[m [1;33m|[m [33md1e6af1c[m fix: 修复package.json等配置文件未被Git跟踪的问题
+[32m|[m > [1;33m|[m [1;33m|[m [33md509b34d[m fix: 修复.dockerignore导致前端构建失败的问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m2b27743e[m security: 明确排除.env文件并添加安全说明
+[32m|[m > [1;33m|[m [1;33m|[m [33m22266d3f[m feat: 添加Docker Hub发布支持和完整的Docker部署配置
+[32m|[m > [1;33m|[m [1;33m|[m [33m69a5b9bb[m feat: 实现实时PE/PB计算功能
+[32m|[m > [1;33m|[m [1;33m|[m [33m217feca9[m fix: 修复港股代码识别和标准化问题
+[32m|[m > [1;33m|[m [1;33m|[m [33m63c186e2[m chore: 提交当前变更
+[32m|[m > [1;33m|[m [1;33m|[m [33m321fbf0f[m chore: 清理根目录并整理脚本
+[32m|[m > [1;33m|[m [1;33m|[m [33m48e06d7e[m feat: 综合更新 - 进度追踪优化、模型能力系统、数据源改进等
+[32m|[m > [1;33m|[m [1;33m|[m [33m927a82f4[m fix: 修复用户管理操作类型缺失和重复日志记录问题
+[32m|[m > [1;33m|[m [1;33m|[m [33mfa30827e[m fix: 修复模型能力路由的响应格式，使用统一的ok()函数
+[32m|[m > [1;33m|[m [1;33m|[m [33m34333e8b[m docs: 添加模型能力分级系统文档
+[32m|[m > [1;33m|[m [1;33m|[m [33me74b09eb[m feat: 实现模型能力分级系统（第二阶段 - 前端集成）
+[32m|[m > [1;33m|[m [1;33m|[m [33mebaa1b8c[m feat: 实现模型能力分级系统（第一阶段）
+[32m|[m > [1;33m|[m [1;33m|[m [33m0f791249[m refactor: 移除前端自定�
