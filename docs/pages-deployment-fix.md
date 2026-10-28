@@ -23,3 +23,11 @@ result was a working homepage but HTTP 404 for the resume and its assets.
   unexpected content. A deployment API success alone is no longer the final check.
 
 Keep Settings → Pages → Source set to **GitHub Actions**. Do not switch it back to branch publishing.
+
+## Verification
+
+Repair commit: `98901c36`. [Actions run 40659095157](https://github.com/ziming-zx/ziming-zx.github.io/actions/runs/40659095157)
+completed successfully, including the Jekyll build, publishing-mode guard, deployment and public-site checks.
+Independent HTTP requests confirmed status 200 for `/`, `/publications/`, `/zx-resume/`,
+the CV CSS, JavaScript and hero image. The live CV includes the current SINOPEC email address.
+Only the custom website workflow ran for the repair push; the legacy branch-publishing run was not triggered.

@@ -60,15 +60,17 @@ cd projects/TradingAgents-CN
 TradingAgents-CN 源码、脚本和合并来源记录都排除在网页发布内容之外。
 
 当前本地工作分支是 `consolidate-repositories`，远程 origin 指向原主页仓库。
-合并结果尚未推送，线上网站与原来的三个 GitHub 仓库均未修改。
-后续上线时：
+合并结果已经推送到远程 `master`，主页与新版简历已于 2026-10-28 部署并验证可访问。
+线上地址：主页 `https://ziming-zx.github.io/`，简历 `https://ziming-zx.github.io/zx-resume/`。
+后续维护时：
 
-1. 将本地合并分支推送到 `ziming-zx.github.io`，通过 PR 检查构建结果。
-2. 在主仓库的 Settings → Pages 中，将发布来源设为 GitHub Actions。
-3. 合入默认分支后，工作流发布主页和简历。合并分支及 PR 只构建，不部署。
-4. 切换时关闭旧 `zx-resume` 仓库的 Pages 发布，让主站接管 `/zx-resume/`。
-   旧路径不变，但需要实际验证不再被旧项目站点覆盖。
-5. 验证线上链接后，旧仓库可作为历史备份保留或归档。
+1. 保持 Settings → Pages → Source 为 **GitHub Actions**，不要改回分支发布。
+2. 推送到默认分支 `master` 后，工作流统一构建并发布主页和简历；其他分支及 PR 只构建。
+3. 发布后的自动检查会验证主页、简历、CSS、JavaScript 和封面图。
+   检查失败时，需查看 deploy 作业的具体路径与错误。
+4. 原来的独立简历仓库不再是当前网站构建所需的依赖。
+
+此前 404 的原因及修复记录见 `docs/pages-deployment-fix.md`。
 
 若以后将仓库改名并部署到非根路径，需要同步调整两个站点的 URL/baseurl；
 当前配置针对原有 `ziming-zx.github.io` 根站点。

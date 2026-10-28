@@ -52,4 +52,5 @@ The preprint is not described as an accepted or published journal article.
 - Browser DOM confirms 9 journal articles, 1 preprint and 6 conference records.
 - Long affiliation and email content checked at 320px phone and 1440px desktop viewports, with no horizontal overflow.
 - The standalone local HTML preview was regenerated; Git whitespace checks passed.
-- Full Jekyll compilation remains unrun because Ruby is unavailable locally. No remote push or deployment was performed.
+- At the content-editing stage, Jekyll was not run locally because Ruby was unavailable, and no deployment was performed then.
+  Subsequent GitHub Actions builds and live deployment passed; see `pages-deployment-fix.md`.

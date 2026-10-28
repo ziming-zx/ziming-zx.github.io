@@ -29,7 +29,8 @@ Playfair Display 标题和 DM Sans 正文。保持原有 YAML 简历资料及章
 
 本机缺少 Ruby，使用 LiquidJS 直接渲染真实 Liquid 模板和 YAML 数据供浏览器预览，
 未将该预览工具或依赖加入正式项目构建。正式发布仍使用根目录的 Jekyll 构建流程。
-完整 Jekyll 构建及线上部署尚未执行。
+初版设计完成时尚未执行完整 Jekyll 构建或部署；后续已通过 GitHub Actions
+完成完整构建与线上验证，见 `docs/pages-deployment-fix.md`。
 
 本次已完成的检查：
 
